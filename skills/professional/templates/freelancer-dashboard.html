@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+{% block content %}
+            <div class="section db">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>Dashboard</h1>
+                        </div>
+                        <p class="lead">Hello there, this is your private dashboard.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="row">
+                        <div class="sidebar col-md-4">
+                            <div class="post-padding clearfix">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="active"><a href="/profesional/{{user.professional_set.first}}/dashboard"><span class="glyphicon glyphicon-off"></span>  My Profile</a></li>
+                                    <li ><a href="/profesional/{{user.professional_set.first}}/resume"><span class="glyphicon glyphicon-user"></span>  Edit Resume</a></li>
+                                    <li><a href="/profesional/{{user.professional_set.first}}/jobs"><span class="glyphicon glyphicon-briefcase"></span>  Active Jobs</a></li>
+                                    <li><a href="/profesional/{{user.professional_set.first}}/completed"><span class="glyphicon glyphicon-briefcase"></span>  Passed Jobs</a></li>
+                                    <li><a href="/profesional/{{user.professional_set.first}}/reset-password"><span class="glyphicon glyphicon-refresh"></span>  Change Password</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Logout</a></li>
+                                </ul>
+                            </div><!-- end widget -->
+                        </div><!-- end col -->
+
+                        <div class="content col-md-8">
+                            <div class="post-padding">
+                                <div class="job-title nocover hidden-sm hidden-xs"><h5>My Profile</h5></div>
+                                <form id="submit" class="submit-form">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">                   
+                                            <label class="control-label">Your Photo <small>Please add a photo. (800x800)</small></label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-preview thumbnail"></div>
+                                                <br>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-new">Select Photo</span>
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <input type="file">
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload"><i class="fa fa-close"></i></a>
+                                            </div>
+                                        </div>
+                                    </div><!-- end row -->
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">                   
+                                            <label class="control-label">Profile Cover <small>Please add a cover photo for your profile. (2000x1200)</small></label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-preview thumbnail"></div>
+                                                <br>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-new">Select Cover</span>
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <input type="file">
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload"><i class="fa fa-close"></i></a>
+                                            </div>
+                                        </div>
+                                    </div><!-- end row -->
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">   
+                                            <label class="control-label">Your Name <small>Enter your company name</small></label>
+                                            <input type="text" class="form-control" placeholder="Jenny Pelt">
+                                            <br>
+                                            <label class="control-label">Title <small>Enter a short title (Ex: Web Designer)</small></label>
+                                            <input type="text" class="form-control" placeholder="Web Designer">
+                                            <br>
+                                            <label class="control-label">Website <small>Enter your website here</small></label>
+                                            <input type="text" class="form-control" placeholder="http://psdconverthtml.com">
+                                            <br>
+                                            <label class="control-label">Email <small>Enter offical email here</small></label>
+                                            <input type="email" class="form-control" placeholder="support@psdconverthtml.com">
+                                            <br>
+                                            <label class="control-label">Paypal Email <small>Enter your paypal email here</small></label>
+                                            <input type="email" class="form-control" placeholder="support@psdconverthtml.com">
+                                            <br>
+                                            <label class="control-label">Facebook URL <small>Enter your Facebook url</small></label>
+                                            <input type="text" class="form-control" placeholder="http://facebook.com/psdconverthtml">
+                                            <br>                              
+                                            <label class="control-label">Twitter URL <small>Enter your Twitter url</small></label>
+                                            <input type="email" class="form-control" placeholder="http://twitter.com/psdconverthtml">
+                                            <br>                              
+                                            <label class="control-label">Google+ URL <small>Enter your Google+ url</small></label>
+                                            <input type="text" class="form-control" placeholder="http://plus.google.com/+psdconverthtml">
+                                            <br>                              
+                                            <label class="control-label">Linkedin URL <small>Enter your Linkedin url</small></label>
+                                            <input type="email" class="form-control" placeholder="http://linkedin.com/u/psdconverthtml">
+                                        </div>
+                                    </div><!-- end row -->
+                                    <hr>
+                                    <button class="btn btn-primary">Update Profile</button>
+                                </form>
+                            </div><!-- end post-padding -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->  
+                </div><!-- end container -->
+            </div><!-- end section -->
+            {% endblock content %}

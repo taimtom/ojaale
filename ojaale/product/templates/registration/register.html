@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+{% block content %}
+
+<section class="courses">
+
+<div class="form-class col-sm-6 ">
+
+	<h4>{{title}}</h4>
+	<article class="registration">
+<form method="post" action="{% url 'register' %}">
+{% csrf_token %}
+{{ register_form }}
+<input type="submit" class="btn amado-btn" value="{{title}}" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'login' %}">Already have an account</a></p>
+</article>
+</div>
+
+</section>
+{% endblock content %}
+
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $(' input').addClass('form-control');
+        $('input').css('margin-bottom','10px');
+        $('.courses li').css('color','red');
+        $('.checkout_form label').css('display','none');
+        $('#id_comment').addClass('.w-100')
+    })
+</script>
+{% endblock formadjust %}

@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2>Create Company Account</h2>
+                    </div>
+
+                    <form action="{% url 'company:create' %}" method="post" class="checkout_form">
+                        {% csrf_token %}
+                        <div class="row">
+                            
+                            <div class="col-12 mb-3">
+                                {{form}}
+                            </div>
+                           
+            
+
+                            
+                        </div>
+                        <button type="submit" class="btn amado-btn w-100">Create Company</button>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('.checkout_form input').addClass('form-control');
+        $('.checkout_form textarea').addClass('form-control');
+        $('.checkout_form input').css('margin-bottom','10px');
+        $('.checkout_form li').css('color','red');
+        
+        $('#id_comment').addClass('.w-100')
+    })
+</script>
+{% endblock formadjust %}

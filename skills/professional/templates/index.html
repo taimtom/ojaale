@@ -1,0 +1,503 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <div class="section hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="home-title text-center" style="color: black;">
+                                <h3 style="color: black;">I am Employer</h3>
+                                <p style="color: black;">Are you looking for professionals who would do your job for you hassle free? this is right place for you! Open free profile. Once you open your profile, you can advertise your job for free. You can also chat with professionals to strike a deal.</p>
+                                <a href="{% url 'professional:list' %}" class="btn btn-primary" style="color: black;">Search for Skilled Workers</a>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="home-title rightside text-center">
+                                <h3 style="color: black;">I am  a Skilled Worker</h3>
+                                <p style="color: black;">Do you want to get more costumers and earn money? Share your skills and experiences to your customers and earn money. Open a free account and fill out your profile information.</p>
+                                <a style="color: black;" href="{% url 'jobs:list' %}" class="btn btn-primary">Browse Your Job</a>
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+            <div class="section wb">
+                <div class="container">
+                    <div class="section-title text-center clearfix">
+                        <h4>Professions you can find on skill Land</h4>
+                        <p class="lead">This are the jobs you can get skilled workers for on Skill Land (ojaale). You can increase this by adding your own special profession.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_01.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="/profesional/?search=web&locate=lagos">Web Design</a></h4>
+                                    <small>Starting from $0.30</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_02.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="/profesional/?search=web">Web Development</a></h4>
+                                    <small>Starting from $3</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="/profesional/?search=graphic"><img src="{% static 'upload/service_03.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="/profesional/?search=graphic">Graphic Design</a></h4>
+                                    <small>Starting from $10</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_05.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="#">Fashion Design</a></h4>
+                                    <small>Starting from $50</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    <hr class="invis hidden-xs">
+
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_04.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="#">Material Design</a></h4>
+                                    <small>Starting from $0.30</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_06.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="#">Student Project construction</a></h4>
+                                    <small>Starting from $3</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_07.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="#">Responsive Design</a></h4>
+                                    <small>Starting from $10</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="service-tab">
+                                <div class="post-media">
+                                    <a href="#"><img src="{% static 'upload/service_08.jpg' %}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="service-title">
+                                    <h4><a href="#">Make Money Online</a></h4>
+                                    <small>Starting from $50</small>
+                                </div>
+                            </div><!-- end service-tab -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    <div class="loadmorebutton text-center clearfix">
+                        <a href="{% url 'jobs:submit' %}" class="btn btn-primary">Submit Your Job</a>
+                    </div><!-- end loadmore -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+            
+
+            <div class="parallax section" data-stellar-background-ratio="0.5" style="background-image:url('upload/parallax_01.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row testimonials">
+                                {% for testimony in testimonies %}
+                                {% if testimony.selected %}
+                                <div class="col-sm-4">
+                                    <blockquote>
+                                        <!-- <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div> -->
+                                        <p class="clients-words">{{testimony.comment}}.</p>
+                                        <span class="clients-name text-primary">— {{testimony.user.username}}</span>
+                                        <img class="img-circle img-thumbnail" src="{{testi}}" alt="">
+                                    </blockquote>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                <div class="col-sm-4">
+                                    <blockquote>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <p class="clients-words">Awesome Lorem iam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum dolor sit amet. </p>
+                                        <span class="clients-name text-primary">— Factory nn (@facnnteam)</span>
+                                        <img class="img-circle img-thumbnail" src="{% static 'upload/testi_02.png' %}" alt="">
+                                    </blockquote>
+                                </div>
+                                <div class="col-sm-4">
+                                    <blockquote>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <p  class="clients-words">Convert looks amazing, Lorem iam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum.</p>
+                                        <span class="clients-name text-primary">— Big daniel mon</span>
+                                        <img class="img-circle img-thumbnail" src="{% static 'upload/testi_03.png' %}" alt="">
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div><!--/.col-->  
+                    </div><!--/.row-->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="section-title text-center clearfix">
+                        <h4> Best Skilled workers For This Month?</h4>
+                        <p class="lead">This is The list of Skilled workers that were outstandinh ths month.</p>
+                    </div>
+
+                    <div class="row freelancer-list">
+                        {% for skilled in professionals %}
+                        {% if skilled.top_ten %}
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{{skilled.image.url}}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="{{skilled.get_absolute_url}}">{{skilled.name}}</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>{{skilled.profession}}</small></li>
+                                        <li><small>{{skilled.ongoing_jobs.all.count}} Jobs Done</small></li>
+                                    </ul>
+                                    <p>{{skilled.details | truncatechars:120}}.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+                        {% endif %}
+                        {% endfor %}
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_08.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Amanda Martin</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Blogger (Article Writer)</small></li>
+                                        <li><small>33 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_07.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Semanta Klores</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Web Developer</small></li>
+                                        <li><small>51 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_06.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Martin Ands</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Web Anaylzer</small></li>
+                                        <li><small>77 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_05.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Seden Golcek</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Web Designer</small></li>
+                                        <li><small>12 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_04.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Aziz Martines</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>SEO Expert</small></li>
+                                        <li><small>42 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    <div class="loadmorebutton margintop text-center clearfix">
+                        <a href="#" class="btn btn-default">View All Freelancers</a>
+                    </div><!-- end loadmore -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section rb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="custom_fact_item">
+                                <div class="custom_fact_name">
+                                    <h3 class="stat-count">2221</h3>
+                                    <h6>Freelancers</h6>
+                                    <span>We have professional freelancers</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="custom_fact_item">
+                                <div class="custom_fact_name">
+                                    <h3 class="stat-count">2412</h3>
+                                    <h6>Employers</h6>
+                                    <span>We have hundreds of happy clients</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="custom_fact_item">
+                                <div class="custom_fact_name">
+                                    <h3 class="stat-count">12422</h3>
+                                    <h6>Projects Completed</h6>
+                                    <span>We completed more items in 2016 season</span>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            
+
+            <div class="parallax section parallax-off" style="background-image:url('upload/parallax.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-6">
+                            <div class="section-title text-left clearfix">
+                                <h4>Why Choose Skill Land?</h4>
+                                <p class="lead">This is a  platform to meet more customers.</p>
+                            </div>
+
+                            <div class="about-widget">
+                                <h5>How do earn money?</h5>
+                                <ul class="customlist">
+                                    <li>Post pictures of jobs you have done for others so that visitors would see thme and contact you to design an similar one for them.</li>
+                                    <li>Publisize your page to friends on social media so that they can see jobs you have done easily.</li>
+                                    <li>Ensure people who patronize you get the best from you.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+           
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="section-title text-center clearfix">
+                        <h4>Frequently Asked Questions</h4>
+                        <p class="lead">You can read through answers profered for similar questions you have in you mind. feelfree to ask also and we promise to reply promptly.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="blog-widget">
+                                <h5 class="color1"><a href="#">Web Design</a></h5>
+                                <h4><a href="single.html">Welcome to the YourJob!</a></h4>
+                                <div class="blog-meta clearfix">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-clock-o"></i> 21 March 2016</a></li>
+                                        <li><a href="#"><i class="fa fa-comment-o"></i> 21</a></li>
+                                        <li><a href="#"><i class="fa fa-pencil"></i> Amanda</a></li>
+                                    </ul>
+                                </div>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour..</p>
+                                <a class="readmore" href="single.html">View Article</a>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="blog-widget">
+                                <h5 class="color2"><a href="#">Tips & Tricks</a></h5>
+                                <h4><a href="single.html">How to Find a Job?</a></h4>
+                                <div class="blog-meta clearfix">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-clock-o"></i> 15 March 2016</a></li>
+                                        <li><a href="#"><i class="fa fa-comment-o"></i> 44</a></li>
+                                        <li><a href="#"><i class="fa fa-pencil"></i> Martin</a></li>
+                                    </ul>
+                                </div>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour..</p>
+                                <a class="readmore" href="single.html">View Article</a>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="blog-widget">
+                                <h5 class="color3"><a href="#">Our News</a></h5>
+                                <h4><a href="single.html">User Dashboard Updated!</a></h4>
+                                <div class="blog-meta clearfix">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-clock-o"></i> 11 March 2016</a></li>
+                                        <li><a href="#"><i class="fa fa-comment-o"></i> 22</a></li>
+                                        <li><a href="#"><i class="fa fa-pencil"></i> Patrick</a></li>
+                                    </ul>
+                                </div>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour..</p>
+                                <a class="readmore" href="single.html">View Article</a>
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    <div class="loadmorebutton text-center clearfix">
+                        <a href="#" class="btn btn-primary">View All Posts</a>
+                    </div><!-- end loadmore -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+            {% endblock content %}

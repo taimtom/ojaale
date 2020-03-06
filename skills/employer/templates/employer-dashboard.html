@@ -1,0 +1,188 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+            <div class="parallax section parallax-off" style="background-image:url('upload/fbg.jpg');">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>Employer Dashboard</h1>
+                        </div>
+                        <p class="lead">Hello there, this is your private dashboard.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="row">
+                        <div class="sidebar col-md-4">
+                            <div class="post-padding clearfix">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="active"><a href="employer-dashboard.html"><span class="glyphicon glyphicon-off"></span>  Edit Profile</a></li>
+                                    <li><a href="employer-manage-jobs.html"><span class="glyphicon glyphicon-briefcase"></span>  Manage Jobs</a></li>
+                                    <li><a href="employer-submit-job.html"><span class="glyphicon glyphicon-star"></span>  Submit a Jobs</a></li>
+                                    <li><a href="employer-favorites.html"><span class="glyphicon glyphicon-bookmark"></span>  Favorites</a></li>
+                                    <li><a href="employer-transactions.html"><span class="glyphicon glyphicon-edit"></span>  Transactions</a></li>
+                                    <li><a href="employer-change-password.html"><span class="glyphicon glyphicon-refresh"></span>  Change Password</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Logout</a></li>
+                                </ul>
+                            </div><!-- end widget -->
+                        </div><!-- end col -->
+
+                        <div class="content col-md-8">
+                            <div class="post-padding">
+                                <div class="job-title nocover hidden-sm hidden-xs"><h5>Edit Employer Profile</h5></div>
+                                <form id="submit" class="submit-form">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">                   
+                                            <label class="control-label">Compnay Logo <small>Please add a logo. (800x800)</small></label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-preview thumbnail"></div>
+                                                <br>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-new">Select Logo</span>
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <input type="file">
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload"><i class="fa fa-close"></i></a>
+                                            </div>
+                                        </div>
+                                    </div><!-- end row -->
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">                   
+                                            <label class="control-label">Company Cover <small>Please add a cover photo for your company. (2000x1200)</small></label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-preview thumbnail"></div>
+                                                <br>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-new">Select Cover</span>
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <input type="file">
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload"><i class="fa fa-close"></i></a>
+                                            </div>
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">   
+                                            <label class="control-label">Company Name <small>Enter your company name</small></label>
+                                            <input type="text" class="form-control" placeholder="PSD to HTML INC.">
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Company Tagline <small>Enter a short tagline here.</small></label>
+                                            <input type="text" class="form-control" placeholder="Best Web Agency in New York.">
+                                        </div>
+                                    </div>
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Allow In Search</label>
+                                            <select class="selectpicker" data-style="btn-default" data-live-search="true">
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>  
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                             <label class="control-label">Company Location <small>Enter compnay country</small></label>
+                                            <input type="text" class="form-control" placeholder="New Tork">
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Business Category</label>
+                                            <select class="selectpicker" data-style="btn-default" data-live-search="true">
+                                                <option>Web Agency</option>
+                                                <option>Digital Market</option>
+                                                <option>SEO Experts</option>
+                                                <option>Online Purpose</option>
+                                                <option>Office Supplies</option>
+                                                <option>Others</option>
+                                            </select>  
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                             <label class="control-label">Member Since <small>How long time you are member?</small></label>
+                                            <input type="text" class="form-control" placeholder="2013">
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <label class="control-label">Company Description <small>Enter long description for your online resume</small></label>
+                                            <textarea class="form-control" placeholder="Hello there, We are PSD To HTML INC. team from New York."></textarea>
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Company Website <small>Enter your website here</small></label>
+                                            <input type="text" class="form-control" placeholder="http://psdconverthtml.com">
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Email <small>Enter offical email here</small></label>
+                                            <input type="email" class="form-control" placeholder="support@psdconverthtml.com">
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Company Phone <small>Enter your phone here</small></label>
+                                            <input type="text" class="form-control" placeholder="+90 987 665 43 21">
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Company Fax <small>Enter offical fax number</small></label>
+                                            <input type="text" class="form-control" placeholder="+90 987 665 43 21">
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Facebook URL <small>Enter your Facebook url</small></label>
+                                            <input type="text" class="form-control" placeholder="http://facebook.com/psdconverthtml">
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Twitter URL <small>Enter your Twitter url</small></label>
+                                            <input type="email" class="form-control" placeholder="http://twitter.com/psdconverthtml">
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Google+ URL <small>Enter your Google+ url</small></label>
+                                            <input type="text" class="form-control" placeholder="http://plus.google.com/+psdconverthtml">
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <label class="control-label">Linkedin URL <small>Enter your Linkedin url</small></label>
+                                            <input type="email" class="form-control" placeholder="http://linkedin.com/u/psdconverthtml">
+                                        </div>
+                                    </div><!-- end row -->
+
+                                    <hr class="invis">
+
+                                    <button class="btn btn-primary">Update Profile</button>
+                                </form>
+                            </div><!-- end post-padding -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->  
+                </div><!-- end container -->
+            </div><!-- end section -->
+            {% endblock content %}

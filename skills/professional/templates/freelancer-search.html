@@ -1,0 +1,228 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block content %}
+{{block.super}}
+
+            <div class="parallax section parallax-off" style="background-image:url({% static 'upload/blogbg.jpg' %});">
+                <div class="container">
+                    <form class="submit-form customform" method="GET">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></span>
+                                <input type="text" class="form-control" name="search" placeholder="Search Keywords" aria-describedby="basic-addon2">
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-map-o"></i></span>
+                                <input type="text" class="form-control" name="locate" placeholder="All Locations" aria-describedby="basic-addon1">
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <select class="selectpicker" data-style="btn-default" data-live-search="true">
+                                <option>Web Designer</option>
+                                <option>Web Developer</option>
+                                <option>WordPress Expert</option>
+                                <option>Hosting Provider</option>
+                                <option>English Teacher</option>
+                                <option>Digital & Creative</option>
+                                <option>Public Sector</option>
+                                <option>All Categories</option>
+                            </select>  
+                        </div><!-- end col -->
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <button class="btn btn-primary btn-block">Search Freelancer</button>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                    </form>
+                </div><!-- end container -->
+            </div><!-- end section -->
+            <div class="section lb">
+                <div class="container">
+                    <!-- <div class="section-title text-center clearfix">
+                        <h4>Looking for Expert Freelancers?</h4>
+                        <p class="lead">Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.</p>
+                    </div> -->
+
+                    <div class="row freelancer-list">
+                        {% for obj in object_list %}
+                        <a href="{{obj.get_absolute_url}}">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{{obj.image.url}}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <h4><a href="{{obj.get_absolute_url}}">{{obj.name}}</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>{{obj.profession}}</small></li>
+                                        <li><small>{{obj.ongoing_jobs.count}} Jobs Done</small></li>
+                                    </ul>
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                       
+                                    </div>
+                                    
+                
+                                    <p>{{obj.details|truncatechars:120}}</p>
+                                </div><!-- end col -->
+                                <a href="{{obj.get_absolute_url}}" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+                        </a>
+                        {% endfor %}
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_08.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Amanda Martin</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Blogger (Article Writer)</small></li>
+                                        <li><small>33 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_07.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Semanta Klores</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Web Developer</small></li>
+                                        <li><small>51 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_06.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Martin Ands</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Web Anaylzer</small></li>
+                                        <li><small>77 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_05.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Seden Golcek</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>Web Designer</small></li>
+                                        <li><small>12 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="freelancer-wrap row-fluid clearfix">
+                                <div class="col-md-3 text-center">
+                                    <div class="post-media">
+                                        <img class="img-responsive" src="{% static 'upload/testi_04.png' %}" alt="">
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-9">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4><a href="#">Aziz Martines</a></h4>
+                                    <ul class="list-inline">
+                                        <li><small>SEO Expert</small></li>
+                                        <li><small>42 Jobs Done</small></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis.</p>
+                                </div><!-- end col -->
+                                <a href="#" class="btn btn-primary"><span class="oi" data-glyph="link-intact"></span></a>
+                            </div><!-- end freelancer-wrap -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    
+                </div><!-- end container -->
+            </div><!-- end section -->
+            
+
+        
+            {% endblock content %}

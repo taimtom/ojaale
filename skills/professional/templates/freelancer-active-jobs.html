@@ -1,0 +1,176 @@
+{% extends 'main/base.html' %}
+{% block content %}
+            <div class="section db">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>Active Jobs</h1>
+                        </div>
+                        <p class="lead">Listed here 5 active jobs from your clients.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="row">
+                        <div class="sidebar col-md-4">
+                            <div class="post-padding clearfix">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="/profesional/{{user.professional_set.first}}/dashboard"><span class="glyphicon glyphicon-off"></span>  My Profile</a></li>
+                                    <li ><a href="/profesional/{{user.professional_set.first}}/resume"><span class="glyphicon glyphicon-user"></span>  Edit Resume</a></li>
+                                    <li class="active"><a href="/profesional/{{user.professional_set.first}}/jobs"><span class="glyphicon glyphicon-briefcase"></span>  Active Jobs</a></li>
+                                    <li><a href="/profesional/{{user.professional_set.first}}/completed"><span class="glyphicon glyphicon-briefcase"></span>  Passed Jobs</a></li>
+                                    <li ><a href="/profesional/{{user.professional_set.first}}/reset-password"><span class="glyphicon glyphicon-refresh"></span>  Change Password</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Logout</a></li>
+                                </ul>
+                            </div><!-- end widget -->
+                        </div><!-- end col -->
+
+                        <div class="content col-md-8">
+                            <div class="post-padding">
+                                <div class="job-title nocover hidden-sm hidden-xs"><h5>Active Jobs</h5></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive job-table">
+                                            <table id="mytable" class="table table-bordred table-striped">
+
+                                                <thead>
+                                                    <tr>
+                                                    <th>Job Title</th>
+                                                    <th>Employer</th>
+                                                    <th>Price</th>
+                                                    <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                        <h4><a href="#">Hiring Online English Teachers</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">Martin Denson</a></td>
+                                                        <td>$31.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+
+                                                     <tr>
+                                                        <td>
+                                                        <h4><a href="#">Looking blog writer for our blog</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">John DOE</a></td>
+                                                        <td>$775.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                        <h4><a href="#">Development Team Lead (Group Wide Technology)</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">Patrick Jane</a></td>
+                                                        <td>$12.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                        <h4><a href="#">Make my website responsive device compatible</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">Lisbon Terrasa</a></td>
+                                                        <td>$441.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                        <h4><a href="#">Looking Graphic Designer (Logo + UI)</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">Martin Denson</a></td>
+                                                        <td>$55.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                        <h4><a href="#">Are you Typography Expert?</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">Jenny Martines</a></td>
+                                                        <td>$31.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                        <h4><a href="#">Looking WordPress Developer for ThemeForest</a><br>
+                                                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
+                                                        </h4>
+                                                        </td>
+                                                        <td><a href="#">Martin Denson</a></td>
+                                                        <td>$11.00</td>
+                                                        <td>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Complete"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
+                                                        <span data-placement="top" data-toggle="tooltip" title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!-- end table -->
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                            </div><!-- end post-padding -->
+
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div><!-- end col -->
+                    </div><!-- end row -->  
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            {% endblock content %}

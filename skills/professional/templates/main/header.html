@@ -1,0 +1,140 @@
+{% load staticfiles %}
+<header class="header">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default yamm">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" title="" href="index.html"><img src="{% static 'images/theo4.png' %}" alt="" class=""></a>
+                </div>
+                <!-- end navbar header -->
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown hasmenu yamm-half"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Home <b class="fa fa-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="yamm-content">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="tabbable row-fluid">
+                                                    <ul class="nav nav-tabs col-md-4">
+                                                        <li class="active color2"><a href="#b" data-toggle="tab">Skill Land Tour <i class="fa fa-angle-right"></i></a></li>
+                                                        <li class="color3"><a href="#c" data-toggle="tab">Oja Ale <i class="fa fa-angle-right"></i></a></li>
+                                                    </ul>
+                                                    <div class="tab-content col-md-8">
+                                                        <div class="tab-pane secondcol active" id="b">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <ul>
+                                                                        <li><a href="{% url 'jobs:list' %}">Jobs</a></li>
+                                                                        <li><a href="{% url 'jobs:submit' %}">Submit a Job</a></li>
+                                                                        <li><a href="{% url 'employer:list' %}">Employer Listing</a></li>
+                                                                        <li><a href="{% url 'professional:list' %}">Professionals</a></li>
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <ul>
+                                                                        <li><a href="freelancer-profile.html">Contact us</a></li>
+                                                                        <li><a href="freelancer-listing.html">Frequently Asked Questions</a></li>
+                                                                        <li><a href="freelancer-edit-resume.html">Testimonials</a></li>
+                                                                        <li><a href="freelancer-edit-resume.html">Login And Register</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <p>If you are looking special job and freelancer pages, right place here! Tons of options, special pages and more.</p>
+                                                                </div>
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                        
+                                                        <div class="tab-pane thirdcol" id="c">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <ul>
+                                                                        <li><a href="page-about.html">About us</a></li>
+                                                                        <li><a href="page-services.html">Custom Services</a></li>
+                                                                        <li><a href="shop.html">Shop Page</a></li>
+                                                                        <li><a href="shop-single.html">Shop Single</a></li>
+                                                                        <li><a href="shop-single-alt.html">Shop Single Alt</a></li>
+                                                                        <li><a href="shop-cart.html">Shop Cart</a></li>
+                                                                        <li><a href="shop-checkout.html">Shop Checkout</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <ul>
+                                                                        <li><a href="page-pricing.html">Plans & Pricing</a></li>
+                                                                        <li><a href="page-testimonial.html">Testimonials</a></li>
+                                                                        <li><a href="page-shortcodes.html">Shortcodes</a></li>
+                                                                        <li><a href="page-contact.html">Contact Page</a></li>
+                                                                        <li><a href="page-login.html">Login & Register</a></li>
+                                                                        <li><a href="page-faqs.html">FAQS Page</a></li>
+                                                                        <li><a href="page-404.html">Not Found</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <p>Looking creative page examples? Sure, we build special page examples for you. About, contact, register and more.</p>
+                                                                </div>
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                    </div><!-- end tab-content -->
+                                                </div><!-- end tabbable -->
+                                            </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end yamm-content -->
+                                </li><!-- end li -->
+                            </ul><!-- end dropdown-menu -->
+                        </li><!-- end hasmenu -->
+                        <li><a title="" href="{% url 'jobs:list' %}">Employers</a></li>
+                        <li><a title="" href="{% url 'professional:list' %}">Freelancers</a></li>
+                        <li><a title="" href="page-pricing.html">Pricing</a></li>
+                        <li><a title="" href="blog.html">Blog</a></li>
+                        <li><a title="" href="page-contact.html">Support</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                        <li class="dropdown yamm-half membermenu hasmenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% static 'upload/testi_03.png' %}" alt="" class="img-circle"> <span class="caret"></span></a>
+                            <ul class="dropdown-menu start-right">
+                                <li class="dropdown-header">Welcome {{user.username}}</li>
+                                <li><a href="/profesional/{{user.professional_set.first}}"><span class="glyphicon glyphicon-user"></span> Public Profile</a></li>
+                                <li><a href="/profesional/{{user.professional_set.first}}/dashboard"><span class="glyphicon glyphicon-off"></span> User Dashboard</a></li>
+                                <li><a href="/profesional/{{user.professional_set.first}}/resume"><span class="glyphicon glyphicon-edit"></span> Edit Resume / CV</a></li>
+                                <li><a href="/profesional/{{user.professional_set.first}}/jobs"><span class="glyphicon glyphicon-briefcase"></span> Active Jobs</a></li>
+                                <li><a href="/profesional/{{user.professional_set.first}}/completed"><span class="glyphicon glyphicon-briefcase"></span> Passed Jobs</a></li>
+                                <li><a href="/profesional/{{user.professional_set.first}}/reset-password"><span class="glyphicon glyphicon-refresh"></span> Change Password</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li><a class="btn btn-primary" title="" href="job-add.html" style="margin-right: 5px;" > Login </a></li>
+                        <!-- <li> ...</li> -->
+                        <li><a class="btn btn-default" title="" href="job-add.html"> Register</a></li>
+                        {% endif %}
+                    </ul>
+                    <!-- end dropdown -->
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+        <!-- end nav -->
+    </div>
+    <!-- end container -->
+</header>
+<!-- end header -->

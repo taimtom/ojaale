@@ -1,0 +1,243 @@
+{% extends 'main/base.html' %}
+{% block content %}
+            <div class="parallax section parallax-off" style="background-image:url('upload/fbg.jpg');">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>Transactions</h1>
+                        </div>
+                        <p class="lead">Hello there, this is your private dashboard.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="row">
+                        <div class="sidebar col-md-4">
+                            <div class="post-padding clearfix">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="employer-dashboard.html"><span class="glyphicon glyphicon-off"></span>  Edit Profile</a></li>
+                                    <li><a href="employer-manage-jobs.html"><span class="glyphicon glyphicon-briefcase"></span>  Manage Jobs</a></li>
+                                    <li><a href="employer-submit-job.html"><span class="glyphicon glyphicon-star"></span>  Submit a Jobs</a></li>
+                                    <li><a href="employer-favorites.html"><span class="glyphicon glyphicon-bookmark"></span>  Favorites</a></li>
+                                    <li class="active"><a href="employer-transactions.html"><span class="glyphicon glyphicon-edit"></span>  Transactions</a></li>
+                                    <li><a href="employer-change-password.html"><span class="glyphicon glyphicon-refresh"></span>  Change Password</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Logout</a></li>
+                                </ul>
+                            </div><!-- end widget -->
+                        </div><!-- end col -->
+
+                        <div class="content col-md-8">
+                            <div class="post-padding">
+                                <div class="job-title nocover hidden-sm hidden-xs"><h5>Transactions</h5></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table id="mytable" class="table table-bordred table-striped">
+
+                                                <thead>
+                                                    <tr>
+                                                    <th>ID</th>
+                                                    <th>Title</th>
+                                                    <th>Order Date</th>
+                                                    <th>Payment</th>
+                                                    <th>Price</th>
+                                                    <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>0003312</td>
+                                                        <td>Hiring Online English Teachers</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Credit Card</td>
+                                                        <td>$21.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003311</td>
+                                                        <td>Looking Graphic Designer (Logo + UI)</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Paypal</td>
+                                                        <td>$12.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Declined"><button class="btn btn-danger btn-xs"><i class="fa fa-close"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003310</td>
+                                                        <td>Are you Typography Expert?</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Pending"><button class="btn btn-warning btn-xs"><i class="fa fa-question"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003309</td>
+                                                        <td>Looking WordPress Developer..</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003308</td>
+                                                        <td>Hiring Online English Teachers</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003309</td>
+                                                        <td>Fix my OpenCart Problem!</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Paypal</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003312</td>
+                                                        <td>Hiring Online English Teachers</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Credit Card</td>
+                                                        <td>$21.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003311</td>
+                                                        <td>Looking Graphic Designer (Logo + UI)</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Paypal</td>
+                                                        <td>$12.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Declined"><button class="btn btn-danger btn-xs"><i class="fa fa-close"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003310</td>
+                                                        <td>Are you Typography Expert?</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Declined"><button class="btn btn-danger btn-xs"><i class="fa fa-close"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003309</td>
+                                                        <td>Looking WordPress Developer..</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003308</td>
+                                                        <td>Hiring Online English Teachers</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003309</td>
+                                                        <td>Fix my OpenCart Problem!</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Paypal</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003312</td>
+                                                        <td>Hiring Online English Teachers</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Credit Card</td>
+                                                        <td>$21.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003311</td>
+                                                        <td>Looking Graphic Designer (Logo + UI)</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Paypal</td>
+                                                        <td>$12.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003310</td>
+                                                        <td>Are you Typography Expert?</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003309</td>
+                                                        <td>Looking WordPress Developer..</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003308</td>
+                                                        <td>Hiring Online English Teachers</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Skrill</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>0003309</td>
+                                                        <td>Fix my OpenCart Problem!</td>
+                                                        <td>10.11.2016</td>
+                                                        <td>Paypal</td>
+                                                        <td>$10.00</td>
+                                                        <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Approved"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></p></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!-- end table -->
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                            </div><!-- end post-padding -->
+                            
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div><!-- end col -->
+                    </div><!-- end row -->  
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            {% endblock content %}

@@ -1,0 +1,119 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+            <div class="section gb">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>Employers</h1>
+                        </div>
+                        <p class="lead">We have listed here alphabetically all employers.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section wb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <nav class="portfolio-filter text-center">
+                            <ul class="list-inline">
+                                <li><a href="#" data-filter="*">All</a></li>
+                                <li><a data-toggle="tooltip" data-placement="top" title="12" href="#" data-filter=".cat1">A</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="33" href="#" data-filter=".cat2">B</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="13" href="#" data-filter=".cat3">C</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="44" href="#" data-filter=".cat4">D</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="53" href="#" data-filter=".cat5">E</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="5" href="#" data-filter=".cat6">F</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="31" href="#" data-filter=".cat7">G</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="12" href="#" data-filter=".cat8">H</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="7" href="#" data-filter=".cat9">I</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="42" href="#" data-filter=".cat10">J</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="1" href="#" data-filter=".cat11">K</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="22" href="#" data-filter=".cat12">L</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat13">M</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat14">N</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat15">O</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat16">P</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat17">R</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat18">S</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat19">T</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat20">U</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat21">V</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat22">Y</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat23">W</a></li> 
+                                <li><a data-toggle="tooltip" data-placement="top" title="0" href="#" data-filter=".cat24">Z</a></li> 
+                            </ul>
+                        </nav> 
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    <hr class="invis">
+                
+                <div class="portfolio withimage">
+                    <div class="pitem item-w1 item-h1 cat1">
+                        <h4 class="list-title">A</h4>
+                        <ul class="check-list clearfix">
+                            {% for employer in object_list %}
+                            <li><a href="#"><img src="upload/job_01.jpg" alt="" class="alignleft img-responsive"> {{employer.company_name}}<small>Since {{employer.timestamp}} - {{employer.job_set.count}} Jobs</small></a></li>
+                            {% endfor %}
+                            <li><a href="#"><img src="upload/job_02.jpg" alt="" class="alignleft img-responsive"> Armor Concepts <small>Since 2011 - 7 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+
+                    <div class="pitem item-w1 item-h1 cat2">
+                        <h4 class="list-title">B</h4>
+                        <ul class="check-list">
+                            <li><a href="#"><img src="upload/job_08.jpg" alt="" class="alignleft img-responsive"> Butik Ozge <small>Since 2011 - 3 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_09.jpg" alt="" class="alignleft img-responsive"> Beflexsius <small>Since 2013 - 1 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_10.jpg" alt="" class="alignleft img-responsive"> BetGunlu INC. <small>Since 2011 - 1 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+
+                    <div class="pitem item-w1 item-h1 cat3">
+                        <h4 class="list-title">C</h4>
+                        <ul class="check-list">
+                            <li><a href="#"><img src="upload/job_03.jpg" alt="" class="alignleft img-responsive"> Comliment INC. <small>Since 2009 - 3 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_04.jpg" alt="" class="alignleft img-responsive"> Creative Agency <small>Since 2011 - 31 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_06.jpg" alt="" class="alignleft img-responsive"> CobeMain <small>Since 2009 - 23 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+
+                    <div class="pitem item-w1 item-h1 cat4">
+                        <h4 class="list-title">D</h4>
+                        <ul class="check-list">
+                            <li><a href="#"><img src="upload/job_13.jpg" alt="" class="alignleft img-responsive"> DeS EO Markt <small>Since 2006 - 12 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_14.jpg" alt="" class="alignleft img-responsive"> Dazzy Bar <small>Since 2011 - 11 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_15.jpg" alt="" class="alignleft img-responsive"> DoreStyle <small>Since 2011 - 1 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_16.jpg" alt="" class="alignleft img-responsive"> DreamHost <small>Since 2012 - 24 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+
+                    <div class="pitem item-w1 item-h1 cat5">
+                        <h4 class="list-title">E</h4>
+                        <ul class="check-list">
+                            <li><a href="#"><img src="upload/job_17.jpg" alt="" class="alignleft img-responsive"> Erice Ma <small>Since 2011 - 23 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+
+                    <div class="pitem item-w1 item-h1 cat6">
+                        <h4 class="list-title">F</h4>
+                        <ul class="check-list">
+                            <li><a href="#"><img src="upload/job_18.jpg" alt="" class="alignleft img-responsive"> FastTheGo <small>Since 2013 - 11 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_19.jpg" alt="" class="alignleft img-responsive"> FeachYour INC. <small>Since 2014 - 12 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+
+                    <div class="pitem item-w1 item-h1 cat7">
+                        <h4 class="list-title">G</h4>
+                        <ul class="check-list">
+                            <li><a href="#"><img src="upload/job_05.jpg" alt="" class="alignleft img-responsive"> Geo of Shaving <small>Since 2013 - 12 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_11.jpg" alt="" class="alignleft img-responsive"> GakeEat <small>Since 2014 - 11 Jobs</small></a></li>
+                            <li><a href="#"><img src="upload/job_12.jpg" alt="" class="alignleft img-responsive"> Gilsety <small>Since 2015 - 4 Jobs</small></a></li>
+                        </ul><!-- end check -->
+                    </div>
+                </div>
+
+                </div><!-- end container -->
+            </div><!-- end section -->
+            {% endblock content %}

@@ -1,0 +1,463 @@
+{% extends 'main/base.html' %}
+{% block content %}
+            <div class="parallax section parallax-off" style="background-image:url('{{object.employer.cover}}'); background-color: black;">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>{{job.title}}</h1>
+                        </div>
+                        <p class="lead">{{job.tagline}}.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section wb">
+                <div class="container">
+                    <div class="single-job">
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-3 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="{{object.employer.logo}}" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-7 col-xs-12">
+                                    <div class="badge freelancer-badge">Freelancer</div>
+                                    <h3><a href="job-single.html" title="">{{object.title}}</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">{{object.employer.company_name}}</a></span> 
+                                        <span>In : <a href="#">{{object.category}}</a></span>
+                                        <span>Date : {{object.timestamp}}</span>
+                                    </small>
+
+                                    <hr class="invis"> 
+
+                                    <p>{{object.employer.details}}</p>
+
+                                    <a href="#contactmodal" role="button" data-toggle="modal" class="btn btn-primary btn-custom">Apple For Job</a> 
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta m45">
+                                        <p>Employer</p>
+                                        <small>{{object.employer.company_name}}</small>
+                                        <ul class="company-links clearfix">
+                                            <li><a href="#"><i class="fa fa-link"></i> Website</a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i> Google+</a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                                            <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+                                        </ul>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+                    </div><!-- end single-job -->
+
+                    <hr class="singlejobhr"> 
+
+                    <div class="row">
+                        <div class="content col-md-12">
+                            <div class="post-single-job">
+                                <div class="single-content">
+                                    <h4 class="small-title">What I am Looking?</h4>
+                                    <p class="lead">{{object.description}}</p>
+
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                    <p>Rremaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5 class="small-title">Job Features & Overviews</h5>
+
+                                            <ul class="customlist">
+                                                <li>{{job.features}}</li>
+                                                <li>Opencart listed Partner </li>
+                                                <li>Magento Certified</li>
+                                                <li>Php Larvel ,Zend Framework</li>
+                                                <li>Certified Social Engine</li>
+                                                <li>Prestashop , CS cart and Drupal,  ZenCart developer</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <h5 class="small-title">Experience Requirements</h5>
+
+                                            <ul class="customlist">
+                                                <li>{{job.experience}}</li>
+                                                <li>Great experience with Linux, Server Optimizing, Failover Clustering, Security, Virtualization know common used utilites, scripts and services such as Apache, PHP, MySQL, Nginx and many others.</li>
+                                                <li>Donec venenatis ante a imperdiet maximus. Sed in justo porta, rutrum velit non, blandit lorem.</li>
+                                                <li>Aenean pretium tortor eget nisl accumsan posuere. Aliquam congue metus eget quam scelerisque rhoncus.</li>
+                                                <li>Donec vestibulum lectus a nisi vestibulum, sed vehicula est finibus. Proin facilisis tortor sed leo suscipit, quis pellentesque dui luctus.</li>
+                                            </ul>
+                                        </div>
+
+                                        
+                                    </div><!-- end row -->
+
+                                </div>
+                            </div><!-- end post-padding -->
+                        </div>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="section-title text-center clearfix">
+                        <h4>Check Available Jobs</h4>
+                        <p class="lead">Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.</p>
+                    </div>
+
+                    <div class="all-jobs job-listing clearfix">
+                        {% for job in object.employer.job_set.all %}
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="{{job.get_absolute_url}}"><img src="{{job.image.url}}" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge freelancer-badge">Freelancer</div>
+                                    <h3><a href="{{job.get_absolute_url}}" title="">{{job.title}}</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Amanda Sun</a></span> 
+                                        <span>In : <a href="#">{{job.category}}</a></span>
+                                        <span>Date : {{job.timestamp}}</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>{{job.location}}</p>
+                                        <small>Australia</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>${{job.wages}} - $1300</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">Make Offer</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+                        {% endfor %}
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_01.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge freelancer-badge">Freelancer</div>
+                                    <h3><a href="job-single.html" title="">Make my website responsive device compatible</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Amanda Sun</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 16.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Hanua</p>
+                                        <small>Germany</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$200 - $340</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">Make Offer</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_02.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge part-badge">Part Time</div>
+                                    <h3><a href="job-single.html" title="">Hiring Online English Teachers</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Bob Sturan</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 14.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Antalya</p>
+                                        <small>Turkey</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$650/mo</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">View Job</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_03.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge full-badge">Full Time</div>
+                                    <h3><a href="job-single.html" title="">Looking Graphic Designer (Logo + UI)</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Kim Danson</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 13.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>New York</p>
+                                        <small>United States</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$1200/mo</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">View Job</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_04.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge freelancer-badge">Freelancer</div>
+                                    <h3><a href="job-single.html" title="">Are you Typography Expert?</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Teressa Lisbon</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 11.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Kash</p>
+                                        <small>Russia</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$56 - $90</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">Make Offer</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_05.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge partnership-badge">Partnership</div>
+                                    <h3><a href="job-single.html" title="">Looking WordPress Developer for ThemeForest</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">John DOE</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 08.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Austin</p>
+                                        <small>United States</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>-</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">Contact</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_02.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge part-badge">Part Time</div>
+                                    <h3><a href="job-single.html" title="">Hiring Online English Teachers</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Bob Sturan</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 14.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Antalya</p>
+                                        <small>Turkey</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$650/mo</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">View Job</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_03.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge full-badge">Full Time</div>
+                                    <h3><a href="job-single.html" title="">Looking Graphic Designer (Logo + UI)</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Kim Danson</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 13.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>New York</p>
+                                        <small>United States</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$1200/mo</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">View Job</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_04.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge freelancer-badge">Freelancer</div>
+                                    <h3><a href="job-single.html" title="">Are you Typography Expert?</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Teressa Lisbon</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 11.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Kash</p>
+                                        <small>Russia</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$56 - $90</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">Make Offer</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+
+                        <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <a href="job-single.html"><img src="upload/job_05.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge partnership-badge">Partnership</div>
+                                    <h3><a href="job-single.html" title="">Make my website responsive device compatible</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">John DOE</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 08.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Austin</p>
+                                        <small>United States</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>-</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">View Job</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end job-tab -->
+                    </div><!-- end alljobs -->
+
+                    <div class="loadmorebutton text-center clearfix">
+                        <a href="#" class="btn btn-primary" id="loadMore">Load More Jobs</a>
+                    </div><!-- end loadmore -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+            {% endblock content %}

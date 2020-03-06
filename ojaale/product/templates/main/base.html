@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Oja Ale | Market </title>
+{% load staticfiles %}
+{% block head %}
+                {% endblock head %}
+    <!-- Favicon  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- Search Wrapper Area Start -->
+  
+  {% include 'main/header.html' %}
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+                <a href="index.html"><img src="{% static 'img/core-img/logo1.png' %}" alt=""></a>
+            </div>
+            <!-- Navbar Toggler -->
+            <div >
+            
+            
+            <div class="amado-navbar-toggler">
+                
+                <span></span><span></span><span></span>
+            </div>
+            </div>
+            <a href="#" width="100%" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""/> </a>
+        </div>
+        {% block company %}
+        {% endblock company %}
+        <!-- Header Area Start -->
+       {% include 'main/nav.html' %}
+        <!-- Header Area End -->
+
+        
+        
+
+                {% block content %}
+                {% endblock content %}
+
+                
+
+         
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <!-- ##### Newsletter Area Start ##### -->
+    {% include 'main/footer.html' %}
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+	<script src="{% static 'js/nouislider.min.js' %}"></script>
+	<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+	<script src="{% static 'js/mains.js' %}"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- JS code for updating rating values -->
+    <script>
+        $('.fa-star').on('click', function() {
+            $(this).parents('.review-rating').find('.rating-star').removeClass('checked'); // uncheck previously checked star
+    
+            $(this).addClass('checked'); // check currently selected star
+    
+            var ratingValue = $(this).attr('data-rating'); // get rating value
+            var ratingTarget = $(this).attr('data-target');
+    
+            // set the rating value to corresponding target radio input
+            $('input[name="' + ratingTarget + '"][value="' + ratingValue + '"]').prop('checked', true);
+        });
+    </script>
+    <script>
+        $('.dropdown').on('click', function(){
+            $(this).toggleClass('open')
+        })
+    </script>
+    {% block formadjust %}{% endblock formadjust %}
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.head-nav{
+    height:70px;
+    padding: 15px;
+}
+
+.head-nav div.logo{
+    width:200px;
+    float:left;
+}
+.head-nav li{
+    width:80px;
+    float:left;
+    
+}
+
+.head-nav div.cart-fav-search{
+    width:200px;
+    float:left;
+}
+.head-nav nav{
+    float:right;
+}
+@media only screen and (min-width:766px){
+    .top-nav{
+        display:none;
+    }
+}
+@media only screen and (max-width:765px){
+    .head-nav{
+        display:none;
+    }
+}
+.header-area li{
+    padding:0px 50px;
+    font-family:c;
+}
+body{
+
+    font-family:-webkit-body;
+}

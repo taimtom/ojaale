@@ -1,0 +1,190 @@
+{% extends 'main/base.html' %}
+{% block content %}
+            <div class="section db">
+                <div class="container">
+                    <div class="page-title text-center">
+                        <div class="heading-holder">
+                            <h1>Active Jobs</h1>
+                        </div>
+                        <p class="lead">Listed here 5 active jobs from your clients.</p>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="row">
+                        <div class="sidebar col-md-4">
+                            <div class="post-padding clearfix">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="/profesional/{{user.professional_set.first}}/dashboard"><span class="glyphicon glyphicon-off"></span>  My Profile</a></li>
+                                    <li ><a href="/profesional/{{user.professional_set.first}}/resume"><span class="glyphicon glyphicon-user"></span>  Edit Resume</a></li>
+                                    <li><a href="/profesional/{{user.professional_set.first}}/jobs"><span class="glyphicon glyphicon-briefcase"></span>  Active Jobs</a></li>
+                                    <li class="active"><a href="/profesional/{{user.professional_set.first}}/completed"><span class="glyphicon glyphicon-briefcase"></span>  Passed Jobs</a></li>
+                                    <li><a href="/profesional/{{user.professional_set.first}}/reset-password"><span class="glyphicon glyphicon-refresh"></span>  Change Password</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Logout</a></li>
+                                </ul>
+                            </div><!-- end widget -->
+                        </div><!-- end col -->
+
+                        <div class="content col-md-8">
+                            <div class="post-padding">
+                                <div class="job-title nocover hidden-sm hidden-xs"><h5>Passed Jobs</h5></div>
+                                <div class="all-jobs job-listing active-jobs clearfix">
+                                    <div class="job-tab">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="post-media">
+                                                <a href="job-single.html"><img src="upload/job_05.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                                </div><!-- end media -->
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <div class="badge freelancer-badge">Freelancer</div>
+                                                <h3><a href="job-single.html" title="">Hiring Online English Teachers</a></h3>
+                                                <small>
+                                                    <span>Client : <a href="#">Bob Sturan</a></span> 
+                                                    <span>End Date : 14.06.2016</span>
+                                                </small>
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <div class="job-meta text-center">
+                                                    <h4>$150</h4>
+                                                    <a href="#" class="btn btn-primary btn-sm btn-block">Remove</a>
+                                                </div>
+                                            </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end job-tab -->
+
+                                    <div class="job-tab">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="post-media">
+                                                <a href="job-single.html"><img src="upload/job_04.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                                </div><!-- end media -->
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <div class="badge freelancer-badge">Freelancer</div>
+                                                <h3><a href="job-single.html" title="">Looking Graphic Designer (Logo + UI)</a></h3>
+                                                <small>
+                                                    <span>Client : <a href="#">Kim Danson</a></span> 
+                                                    <span>End Date : 13.06.2016</span>
+                                                </small>
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <div class="job-meta text-center">
+                                                    <h4>$33</h4>
+                                                    <a href="#" class="btn btn-primary btn-sm btn-block">Remove</a>
+                                                </div>
+                                            </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end job-tab -->
+
+                                    <div class="job-tab">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="post-media">
+                                                <a href="job-single.html"><img src="upload/job_03.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                                </div><!-- end media -->
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <div class="badge freelancer-badge">Freelancer</div>
+                                                <h3><a href="job-single.html" title="">Are you Typography Expert?</a></h3>
+                                                <small>
+                                                    <span>Client : <a href="#">Teressa Lisbon</a></span> 
+                                                    <span>End Date : 11.06.2016</span>
+                                                </small>
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <div class="job-meta text-center">
+                                                    <h4>$555</h4>
+                                                    <a href="#" class="btn btn-primary btn-sm btn-block">Remove</a>
+                                                </div>
+                                            </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end job-tab -->
+
+                                    <div class="job-tab">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="post-media">
+                                                <a href="job-single.html"><img src="upload/job_02.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                                </div><!-- end media -->
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <div class="badge freelancer-badge">Freelancer</div>
+                                                <h3><a href="job-single.html" title="">Fix my portfolio page</a></h3>
+                                                <small>
+                                                    <span>Client : <a href="#">John DOE</a></span> 
+                                                    <span>End Date : 08.06.2016</span>
+                                                </small>
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <div class="job-meta text-center">
+                                                    <h4>$330</h4>
+                                                    <a href="#" class="btn btn-primary btn-sm btn-block">Remove</a>
+                                                </div>
+                                            </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end job-tab -->
+
+                                    <div class="job-tab">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="post-media">
+                                                <a href="job-single.html"><img src="upload/job_01.jpg" alt="" class="img-responsive img-thumbnail"></a>
+                                                </div><!-- end media -->
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <div class="badge freelancer-badge">Freelancer</div>
+                                                <h3><a href="job-single.html" title="">Looking WordPress Developer..</a></h3>
+                                                <small>
+                                                    <span>Client : <a href="#">John DOE</a></span> 
+                                                    <span>End Date : 08.06.2016</span>
+                                                </small>
+                                            </div><!-- end col -->
+
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <div class="job-meta text-center">
+                                                    <h4>$330</h4>
+                                                    <a href="#" class="btn btn-primary btn-sm btn-block">Remove</a>
+                                                </div>
+                                            </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end job-tab -->
+                                </div><!-- end alljobs -->
+                            </div><!-- end post-padding -->
+
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div><!-- end col -->
+                    </div><!-- end row -->  
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            {% endblock content %}

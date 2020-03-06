@@ -1,0 +1,67 @@
+<form action="{% url 'properties:list' %}" class=" form-inline"> 
+    <fieldset>
+        <div class="row">
+            <div class="col-xs-12">
+                <input type="text" name="search"  class="form-control" placeholder="Key word">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="row">
+            <div class="col-xs-6">
+
+                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Your City">
+
+                    <option value="turck">New york, CA</option>
+                    <option>Paris</option>
+                    <option>Casablanca</option>
+                    <option>Tokyo</option>
+                    <option>Marraekch</option>
+                    <option>kyoto , shibua</option>
+                </select>
+            </div>
+            <div class="col-xs-6">
+
+                <select id="basic" class="selectpicker show-tick form-control">
+                    <option> -Status- </option>
+                    <option>Rent </option>
+                    <option>Boy</option>
+                    <option>used</option>  
+
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="padding-5">
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="price-range">Price range ($):</label>
+                <input type="text" class="span2" value="" data-slider-min="0" 
+                       data-slider-max="1000000" data-slider-step="5" 
+                       data-slider-value="[77,600000]" id="price-range" ><br />
+                <b class="pull-left color">0$</b> 
+                <b class="pull-right color">1000000$</b>                                                
+            </div>
+            <div class="col-xs-6">
+                <label for="property-geo">Property geo (m2) :</label>
+                <input type="text" class="span2" value="" data-slider-min="0" 
+                       data-slider-max="12000" data-slider-step="5" 
+                       data-slider-value="[50,4150]" id="property-geo" ><br />
+                <b class="pull-left color">0m</b> 
+                <b class="pull-right color">12000m</b>                                                
+            </div>                                            
+        </div>
+    </fieldset>                                
+
+   
+
+    <fieldset >
+        <div class="row">
+            <div class="col-xs-12">  
+                <input class="button btn largesearch-btn" value="Search" type="submit">
+            </div>  
+        </div>
+    </fieldset>                                     
+</form>

@@ -1,0 +1,114 @@
+<nav class="navbar navbar-default ">
+    {% load staticfiles %}
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse yamm" id="navigation">
+            <div class="button navbar-right">
+                <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('/register/')" data-wow-delay="0.4s">Login</button>
+                <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('/properties/submit/create')" data-wow-delay="0.5s">Submit</button>
+            </div>
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                    <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{% url 'index' %}">Home</a></li>
+                    
+                </li>
+
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{% url 'properties:list' %}">Properties</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">Property</a></li>
+                <li class="dropdown yamm-fw" data-wow-delay="0.1s">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Categories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <form method="GET" action="{% url 'properties:list' %}">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row cat_search">
+                                    <div class="col-sm-3">
+                                        <h5>Engineering Equipments</h5>
+                                        <ul>
+                                            <li>
+                                               <button name="search" value="tractor">TRACTORS</button>
+                                            </li>
+                                            <li>
+                                                <button name="search" value="tractor">Excavators</button>
+                                            </li>
+                                            <li>
+                                                <button name="search" value="tractor">Late machine</button>
+                                            </li>
+                                            <li>
+                                                <button name="search" value="tractor">Home Style 4</button>
+                                            </li>
+                                            <li>
+                                                <button name="search" value="tractor">Home Style 5</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>Events and Accessories</h5>
+                                        <ul>
+                                            <li><button name="search" value="canopy">CANOPY</button>  </li>
+                                            <li><button name="search" value="chairs">Chairs</button>  </li>
+                                            <li><button name="search" value="event hall">Event Hall</button>  </li>
+                                            <li><button name="search" value="tables">Tables</button>  </li>
+                                            <li><button name="search" value="cooking">Cooking Accesories</button> </li>
+                                            <li><button name="search" value="musical">Musical Instruments</button> </li>
+                                            <li><button name="search" value="tractor">Contact style (3)</button> </li>
+                                            <li><button name="search" value="tractor">FAQ page</button> </li> 
+                                            <li><button name="search" value="tractor">404 page</button>  </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>Automobile</h5>
+                                        <ul>
+                                            <li><button name="search" value="trucks">Trucks</button> </li>
+                                            <li><button name="search" value="cars">Cars</button> </li>
+                                            <li><button name="search" value="buses">Buses</button> </li>
+                                        </ul>
+
+                                        <h5>Properties list</h5>
+                                        <ul>
+                                            <li><button name="search" value="buses">Properties list style (1)</button> </li> 
+                                            <li><button name="search" value="buses">Properties list style (2)</button> </li> 
+                                            <li><button name="search" value="buses">Properties list style (3)</button> </li> 
+                                        </ul>                                               
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>Property process</h5>
+                                        <ul> 
+                                            <li><button name="search" value="buses">Submit - step 1</button> </li>
+                                            <li><button name="search" value="buses">Submit - step 2</button> </li>
+                                            <li><button name="search" value="buses">Submit - step 3</button> </li> 
+                                        </ul>
+                                        <h5>Houses</h5>
+                                        <ul>
+                                            <li><button name="search" value="Shop">Shop</button>   </li>
+                                            <li><button name="search" value="Office">Office</button>  </li>
+                                            <li><button name="search" value="Residential">Residential Apartments</button>  </li>
+                                            <li><button name="search" value="Ware">Ware House</button> </li>
+                                            <li><button name="search" value="Buildings">Buildings</button>  </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.yamm-content -->
+                        </li>
+                        </form>
+                    </ul>
+                </li>
+
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- End of nav bar -->

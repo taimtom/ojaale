@@ -1,0 +1,156 @@
+/******************************************
+    File Name: colors.css
+    Template Name: YourJob
+    Created By: PSD Convert HTML Team
+    Envato Profile: http://themeforest.net/user/psdconverthtml
+    Website: https://psdconverthtml.com
+    Version: 1.0
+    Support: support@psdconverthtml.com
+/******************************************/
+
+/******************************************
+    COLORS
+******************************************/
+
+.full-badge {
+    background-color: #8e44ad;
+}
+
+.partnership-badge {
+    background-color: #3498db;
+}
+
+
+/* #f0ad4e */
+
+.whoweare hr,
+.service-list i,
+.content-title hr {
+    border-color: #f0ad4e !important;
+}
+
+.service-list i,
+.freelancer-list .job-tab:hover .badge,
+.tags a,
+.contact-details li i,
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.owl-theme .owl-nav [class*="owl-"]:hover,
+.owl-theme .owl-nav [class*="owl-"]:focus,
+.yamm .badge,
+.featured,
+.dmtop,
+.contactme,
+.part-badge,
+.btn-primary {
+    color: #ffffff !important;
+    background-color: #f0ad4e !important;
+    border-color: #f0ad4e !important;
+}
+
+.tags a:hover,
+.contact-details li:hover i,
+.contact-details li:focus i,
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #ffffff !important;
+    background-color: #161513 !important;
+    border-color: #161513 !important;
+}
+
+.customform i,
+.listcheckbox .readmore:hover,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover,
+.nav-pills > li:hover a,
+.nav-pills > li:focus a,
+.single-content h4.small-title .readmore,
+.check li:before,
+.submit-form .dropdown-menu > .active > a,
+.submit-form .dropdown-menu > .active > a:focus,
+.submit-form .dropdown-menu > .active > a:hover,
+.clients-name,
+.customlist li:before,
+.stickyfooter .text-left a,
+a:hover,
+a:focus,
+.color {
+    color: #f0ad4e !important;
+}
+
+.job-title {
+    border-top-color: #f0ad4e !important;
+}
+
+
+/* GREEN */
+
+.gb,
+.social-small li .fa-link,
+.freelancer-badge,
+.btn-default {
+    color: #ffffff !important;
+    background-color: #1c201e !important;
+    border-color: #191f1b !important;
+}
+
+.verification-list li.done i {
+    color: #27ae60 !important;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    color: #ffffff !important;
+    background-color: #090c0b !important;
+    border-color: #090c0b!important;
+}
+
+
+/* DARK */
+
+.btn-inverse {
+    color: #ffffff !important;
+    background-color: #2c3e50 !important;
+    border-color: #34495e !important;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus {
+    color: #ffffff !important;
+    background-color: #34495e !important;
+    border-color: #2c3e50 !important;
+}
+
+.readmore:hover,
+.readmore:focus,
+.readmore {
+    color: #2c3e50 !important;
+}
+
+.btn-custom {
+    margin-top: 20px;
+    background-color: transparent !important;
+    border: 2px solid #f0ad4e;
+    color: #f0ad4e !important;
+    padding: 10px 30px;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: transparent !important;
+    border: 2px solid #f0ad4e;
+    color: #f0ad4e !important;
+    padding: 10px 30px;
+}
+
+.single-job .btn-default {
+    padding: 10px 30px;
+    border-width: 2px;
+    background-color: transparent !important;
+    border-color: #18293b !important;
+    color: #18293b !important;
+}
