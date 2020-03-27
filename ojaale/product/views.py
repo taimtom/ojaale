@@ -23,22 +23,34 @@ from cart.models import Cart
 from .forms import ProductForm
 from company.models import Company
 # Create your views here.
+
+def index(request):
+	template_name="main/index_try.html"
+	shops=Company.objects.all()
+	products=Products.objects.all()
+	cart_=get_object_or_404(Cart, user=request.user)
+	context={
+		"products":products,
+		"shops":shops,
+		'carts':cart_
+
+	}
+	return render(request, template_name, context)
+
 class ProductsList(ListView):
 	queryset=Products.objects.all()
 	template_name='main/product/list.html'
+	for query in queryset:
+		reviews=[x.rating for x in Review.objects.filter(content_type=query.get_content_type)]
+		
+	
+	# for review in reviews:
+	# 	print(review)
 
 	def get_context_data(self, *args, **kwargs):
 		context=super(ProductsList,self).get_context_data(*args, **kwargs)
-		#queryset=Products.objects.all()
-		#name=self.request.POST.get('product_name')
-		# instance = get_object_or_404(Products, name=name)
-		# in_cart=False
-		# if self.request.user.is_authenticated:
-		# 	cart_=get_object_or_404(Cart, user=self.request.user)
-		# 	if instance in cart_.products.all():
-		# 		in_cart=True
-		# context['in_cart']=in_cart
-		#context['object_list']=queryset
+		cart_=get_object_or_404(Cart, user=self.request.user)
+		context['cart']=cart_
 
 		return context
 	
@@ -46,21 +58,13 @@ class ProductsList(ListView):
 
 
 def productdetail(request, slug=None):
-	
-	
 	instance = get_object_or_404(Products, slug=slug)
+	print(instance.slug)
 	share_string= quote(instance.description)
 	initial_data={
-		
 		"content_type":instance.get_content_type,
 		"object_id":instance.id
 	}
-	in_cart=False
-	if request.user.is_authenticated:
-		cart_=get_object_or_404(Cart, user=request.user)
-		if instance in cart_.products.all():
-			in_cart=True
-	
 	form=ReviewForm(request.POST or None, initial=initial_data)
 	if form.is_valid():
 		c_type=form.cleaned_data.get("content_type")
@@ -79,7 +83,6 @@ def productdetail(request, slug=None):
 				parent_obj=parent_qs.first()
 				print(parent_obj)
 		new_review, created=Review.objects.get_or_create(
-
 			user=request.user,
 			content_type=content_type,
 			object_id=obj_id,
@@ -88,19 +91,29 @@ def productdetail(request, slug=None):
 			rating=rating
 			)
 		return HttpResponseRedirect(new_review.content_object.get_absolute_url())
-
 	reviews=Review.objects.filter_by_instance(instance)
+	rating=[x.rating for x in reviews]
+	sumrating=0
+	for val in rating:
+		sumrating+=val
+	numberofreviews=len(rating)
+	meanrating=round((sumrating/(numberofreviews)),2)
+
+
+	
 	
 	context={
-		'share_string':share_string,
+		# 'share_string':share_string,
 		'object':instance,
 		'reviews':reviews,
 		'review_form':form,
-		'product_name':instance.name,
-		'in_cart':in_cart
+		'meanrating':meanrating,
+		'numberofreviews':numberofreviews,
+		# 'product_name':instance.name,
+		# 'in_cart':in_cart
 		
 	}
-	template='main/product/detail.html'
+	template='main/product/detail_test.html'
 	return render(request,'main/product/detail.html',context)
 
 

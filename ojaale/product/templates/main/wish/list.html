@@ -1,0 +1,121 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="cart-title mt-50">
+                    <h2>Wish List</h2>
+                </div>
+
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{object_list.products.all}}
+                            {% for obj in wish_list %}
+                                {% for product in obj.products.all %}
+                            <tr>
+                                <td class="cart_product_img">
+                                    <a href="#"><img src="{{product.image.url}}" alt="{{product.name}}"></a>
+                                </td>
+                                <td class="cart_product_desc">
+                                    <h5>{{product.name}}</h5>
+                                </td>
+                                <td class="price">
+                                    <span>${{product.price}}</span>
+                                </td>
+                                <td class="qty">
+                                    <div class="qty-btn d-flex">
+                                        <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                                            <input type="hidden" name="product_name" value="{{product.name}}" />
+                                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> {% if in_cart %} Remove From Cart {% else %} Add To Cart {% endif %}</button>
+                                            
+                                        </form>
+                                    </div>
+                                </td>
+                                
+                            </tr>
+                            {% endfor %}
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="aside">
+                <h3 class="aside-title">Recommended</h3>
+                <!-- widget product -->
+                
+                <div class="product product-widget">
+                    {% for obj in wish_list %}
+                                {% for product in obj.products.all %}
+                    <a href="/products/{{product.slug}}">
+                    <div class="product-thumb">
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="product-body">
+                        <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+                        <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                        <div class="product-rating">
+                            
+                        </div>
+                    </div>
+                    </a>
+                    {% endfor %}
+                    {% endfor %}
+                    {% for product in object_list %}
+                    <a href="/products/{{product.slug}}">
+                    <div class="product-thumb">
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="product-body">
+                        <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+                        <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                        <div class="product-rating">
+                            <!-- <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i> -->
+                        </div>
+                    </div>
+                    </a>
+                    {% endfor %}
+                    {% for product in object_list %}
+                    <a href="/products/{{product.slug}}">
+                    <div class="product-thumb">
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="product-body">
+                        <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+                        <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                        <div class="product-rating">
+                            <!-- <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i> -->
+                        </div>
+                    </div>
+                    </a>
+                    {% endfor %}
+                    
+                    
+                </div>
+                <!-- /widget product -->
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

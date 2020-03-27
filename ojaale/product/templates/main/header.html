@@ -1,21 +1,5 @@
 {% load staticfiles %}
-<div class="search-wrapper section-padding">
-    <div class="search-close">
-        <i class="fa fa-close" aria-hidden="true"></i>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="search-content">
-                    <form action="#" method="get">
-                        <input type="search" name="search" id="search" placeholder="Type your keyword..."/>
-                        <button type="submit"><img src="{% static 'img/core-img/search.png' %}" alt=""></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
     <div class="head-nav">
@@ -23,18 +7,88 @@
             <div class="col-12"> 
            
             <div class="logo">
-                <a href="{% url 'home' %}"><img src="{% static 'img/core-img/logo1.png' %}"   alt=""></a>
+                <a href="{% url 'home' %}"><img src="{% static 'img/core-img/logo7.png' %}"   alt=""></a>
             </div>
            
                     <div class="">
                         <ul>
+                          
                             
                             <li><a href="{% url 'home' %}">Home</a></li>
-                            <li ><a href="{% url 'products:list' %}">Shop</a></li>
+                            <li ><a href="{% url 'company:list' %}">Shops/offices</a></li>
                             <li><a href="{% url 'delivery:checkout' %}">Checkout</a></li>
-                            <li><a href="{% url 'cart:cart' %}" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> Cart <span>({{number_of_items}})</span></a></li>
-                            <li><a href="{% url 'cart:cart' %}" class="fav-nav"> Favourite<img src="{% static 'img/core-img/favorites.png' %}" alt=""></a></li>
-            
+                             <!-- Cart -->
+                    <li class="header-cart dropdown default-dropdown" style="margin-left: -12px;">
+                        <a class="" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <!-- <i class="fa fa-shopping-cart"></i> -->
+                                <img src="{% static 'img/core-img/cart.png' %}" alt="">
+                                Cart
+                                <span class="qty">{% for cart in user.cart_set.all %} {{cart.products.count}} {% endfor %}</span>
+                            </div>
+                            
+                        </a>
+                        <div class="custom-menu">
+                            <div id="shopping-cart">
+                                <div class="shopping-cart-list">
+                                    {% for cart in user.cart_set.all %}
+                                    {% for product in cart.products.all %}
+                                    <div class="product product-widget">
+                                        <div class="product-thumb">
+                                            <img src="{{product.image.url}}" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-price">${{product.price}} <span class="qty">x3</span></h3>
+                                            <h2 class="product-name"><a href="{{product.get_absolute_url}}">{{product.name}}</a></h2>
+                                        </div>
+                                        <button class="cancel-btn"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                    {% endfor %}
+                                    {% endfor %}
+                                  
+                                </div>
+                                <div class="shopping-cart-btns">
+                                    <a href="{% url 'cart:cart' %}"><button class="main-btn" >View Cart</button></a>
+                                    <a href="{% url 'delivery:checkout' %}"> <button class="primary-btn">Checkout </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Cart -->
+                            <!-- <li><a href="{% url 'cart:cart' %}" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> <span class="qty"></span>Cart <span>({% for cart in user.cart_set.all %} {{cart.products.count}} {% endfor %})</span></a></li> -->
+                            <li><a href="{% url 'wish:wish' %}" class="fav-nav"> Favourite<img src="{% static 'img/core-img/favorites.png' %}" alt=""></a></li>
+                            <li class="header-cart dropdown default-dropdown" style="margin-left: -12px;">
+                                <a class="" data-toggle="dropdown" aria-expanded="true">
+                                    <div class="header-btns-icon">
+                                        <!-- <i class="fa fa-shopping-cart"></i> -->
+                                        
+                                       Search
+                                        
+                                    </div>
+                                    
+                                </a>
+                                <div class="custom-menu">
+                                    <div id="shopping-cart">
+                                        <div class="shopping-cart-list">
+                                            
+                                            <div class="product product-widget">
+                                                
+                                               
+                                                <div class="col-md-6 mb-3">
+                                                    <input class="" type="text">
+                                               </div>
+                                               
+                                            </div>
+                                            
+                                          
+                                        </div>
+                                        <div class="shopping-cart-btns">
+                                            
+                                            <button class="primary-btn">Search <i class="fa fa-arrow-circle-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 

@@ -40,9 +40,10 @@
                 <div class="cart-summary">
                     <h5>Cart Total</h5>
                     <ul class="summary-table">
-                        <li><span>subtotal:</span> <span>$140.00</span></li>
-                        <li><span>delivery:</span> <span>Free</span></li>
-                        <li><span>total:</span> <span>$140.00</span></li>
+                        <li><span>subtotal:</span> <span>${{subtotal}}.00</span></li>
+                        <li><span>delivery:</span> <span id="deliveryCharge"></span></li>
+                        <input type="hidden" id="priceSubtotal" name="price"  value="{{subtotal}}">
+                        <li><span>total:</span> <span id="TotalPrice"></span></li>
                     </ul>
 
                     <div class="payment-method">
@@ -51,11 +52,10 @@
                             <input type="checkbox" class="custom-control-input" id="cod" checked>
                             <label class="custom-control-label" for="cod">Cash on Delivery</label>
                         </div>
-                        <!-- Paypal -->
-                        <div class="custom-control custom-checkbox mr-sm-2">
-                            <input type="checkbox" class="custom-control-input" id="paypal">
-                            <label class="custom-control-label" for="paypal">Paypal <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
-                        </div>
+                        
+                        
+                        <script src="https://js.paystack.co/v1/inline.js"></script>
+<div id="paystackEmbedContainer"></div>
                     </div>
 
                     <div class="cart-btn mt-100">
@@ -78,4 +78,337 @@
         $('#id_comment').addClass('.w-100')
     })
 </script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<div id="paystackEmbedContainer"></div>
+
+<script>
+  var amountTotal= $('#priceTotal').val()
+  var customerEmail= $('#email_id').val()
+  PaystackPop.setup({
+   key: 'pk_test_37594665d8156eff9f674d8fe0ee495ba71fc61a',
+   email: customerEmail,
+   amount: amountTotal,
+   container: 'paystackEmbedContainer',
+   callback: function(response){
+        alert('successfully subscribed. transaction ref is ' + response.reference);
+    },
+  });
+</script>
+<script>
+    var request = new XMLHttpRequest();
+
+request.open('POST', 'https://api.kwik.delivery/create_task_via_vendor');
+
+request.setRequestHeader('Content-Type', 'application/json');
+
+request.onreadystatechange = function () {
+if (this.readyState === 4) {
+console.log('Status:', this.status);
+console.log('Headers:', this.getAllResponseHeaders());
+console.log('Body:', this.responseText);
+}
+};
+
+var body = {
+'domain_name': 'dev-client-panel.kwik.delivery',
+'access_token': '3b6220eb66129f2fc06281a9901aecda',
+'vendor_id': 151,
+'is_multiple_tasks': 1,
+'fleet_id': '',
+'latitude': 0,
+'longitude': 0,
+'timezone': -330,
+'has_pickup': 1,
+'has_delivery': 1,
+'pickup_delivery_relationship': 0,
+'layout_type': 0,
+'auto_assignment': 1,
+'team_id': '',
+'pickups': [
+{
+  'address': 'Delhi Cantonment, New Delhi, Delhi, India',
+  'name': 'Corporate Grg',
+  'latitude': 28.5961279,
+  'longitude': 77.15873750000003,
+  'time': '2019-09-03 11:52:56',
+  'phone': '+917654323456',
+  'template_data': [
+    {
+      'label': 'baseFare',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 40,
+      'input': 40,
+      'template_id': 'pricing-template',
+      'display_name': 'baseFare'
+    },
+    {
+      'label': 'timeFare',
+      'display_name': 'timeFare',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 2,
+      'input': 2,
+      'template_id': 'pricing-template'
+    },
+    {
+      'label': 'distanceFare',
+      'display_name': 'distanceFare',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 1,
+      'input': 1,
+      'template_id': 'pricing-template'
+    },
+    {
+      'label': 'pricingType',
+      'display_name': 'pricingType',
+      'data_type': 'Text',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 'Variable',
+      'input': 'Variable',
+      'template_id': 'pricing-template'
+    },
+    {
+      'label': 'insuranceAmount',
+      'display_name': 'insuranceAmount',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 0,
+      'input': 0,
+      'template_id': 'pricing-template'
+    }
+  ],
+  'template_name': 'pricing-template',
+  'ref_images': '',
+  'email': 'co@yopmail.com'
+}
+],
+'deliveries': [
+{
+  'address': 'CDCL, Madhya Marg, 28B, Sector 28B, Chandigarh, India',
+  'name': 'Ishita',
+  'latitude': 30.7188978,
+  'longitude': 76.81029809999995,
+  'time': '2019-09-03T16:26:23.000Z',
+  'phone': '+916543212345',
+  'template_data': [
+    {
+      'label': 'baseFare',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 40,
+      'input': 40,
+      'template_id': 'pricing-template',
+      'display_name': 'baseFare'
+    },
+    {
+      'label': 'timeFare',
+      'display_name': 'timeFare',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 2,
+      'input': 2,
+      'template_id': 'pricing-template'
+    },
+    {
+      'label': 'distanceFare',
+      'display_name': 'distanceFare',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 1,
+      'input': 1,
+      'template_id': 'pricing-template'
+    },
+    {
+      'label': 'pricingType',
+      'display_name': 'pricingType',
+      'data_type': 'Text',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 'Variable',
+      'input': 'Variable',
+      'template_id': 'pricing-template'
+    },
+    {
+      'label': 'insuranceAmount',
+      'display_name': 'insuranceAmount',
+      'data_type': 'Number',
+      'app_side': '2',
+      'required': 0,
+      'value': 0,
+      'data': 0,
+      'input': 0,
+      'template_id': 'pricing-template'
+    }
+  ],
+  'template_name': 'pricing-template',
+  'ref_images': '',
+  'has_return_task': false,
+  'is_package_insured': 0,
+  'hadVairablePayment': 1,
+  'hadFixedPayment': 0
+}
+],
+'insurance_amount': 0,
+'total_no_of_tasks': 1,
+'total_service_charge': 23,
+'payment_method': 8,
+'amount': '841.62'
+};
+var amountSubtotal= $('#priceSubtotal').val()
+var deliveryCharge=body.amount 
+var amountTotal= parseInt(amountSubtotal) + parseInt(deliveryCharge)
+console.log(deliveryCharge)
+$('#deliveryCharge').append(body.amount)
+$('#TotalPrice').append(amountTotal)
+
+request.send(JSON.stringify(body));
+</script>
+<script>
+var request = new XMLHttpRequest();
+
+request.open('POST', 'https://api.kwik.delivery/send_payment_for_task');
+
+request.setRequestHeader('Content-Type', 'application/json');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+var phoneNumber= $('#id_number').val()
+var customerCountry= $('#id_country').val()
+var customerState= $('#id_state').val()
+var customerLga= $('#id_town').val()
+var customerStreet= $('#id_street').val()
+var addressCustomer= customerStreet + ', ' + customerLga + ', ' + customerState + ', ' + customerCountry
+console.log(addressCustomer)
+var body = {
+  'custom_field_template': 'pricing-template',
+  'access_token': '789ac4828a1dcf99a893557a72d95571',
+  'domain_name': 'test-client-panel.kwik.delivery',
+  'timezone': -330,
+  'vendor_id': 162,
+  'is_multiple_tasks': 1,
+  'layout_type': 0,
+  'pickup_custom_field_template': 'pricing-template',
+  'deliveries': [
+    {
+      'address': 'Sector 19, Chandigarh, India',
+      'name': '',
+      'latitude': 30.72936309999999,
+      'longitude': 76.79197279999994,
+      'time': '2019-09-03 12:48:24',
+      'phone': '+919646297487',
+      'has_return_task': false,
+      'is_package_insured': 0
+    }
+  ],
+  'has_pickup': 1,
+  'has_delivery': 1,
+  'auto_assignment': 1,
+  'user_id': 1,
+  'pickups': [
+    {
+      'address': 'CDCL, Madhya Marg, 28B, Sector 28B, Chandigarh, India',
+      'name': 'Jovani Predovic',
+      'latitude': 30.7188978,
+      'longitude': 76.81029809999995,
+      'time': '2019-09-03 12:48:24',
+      'phone': '+917837905578',
+      'email': 'lead@yopmail.com'
+    }
+  ],
+  'payment_method': 32,
+  'form_id': 2
+};
+
+request.send(JSON.stringify(body));
+</script>
+<!-- <script>
+    function payWithPaystack(){
+      var handler = PaystackPop.setup({
+        key: 'pk_test_37594665d8156eff9f674d8fe0ee495ba71fc61a',
+        email: 'customer@email.com',
+        amount: 10000,
+        currency: "NGN",
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        firstname: 'Stephen',
+        lastname: 'King',
+        // label: "Optional string that replaces customer email"
+        metadata: {
+           custom_fields: [
+              {
+                  display_name: "Mobile Number",
+                  variable_name: "mobile_number",
+                  value: "+2348012345678"
+              }
+           ]
+        },
+        callback: function(response){
+            alert('success. transaction ref is ' + response.reference);
+        },
+        onClose: function(){
+            alert('window closed');
+        }
+      });
+      handler.openIframe();
+    }
+</script> -->
 {% endblock formadjust %}
+<!-- <form >
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <button type="button" onclick="payWithPaystack()"> Pay </button> 
+  </form>
+   
+  <script>
+    function payWithPaystack(){
+      var handler = PaystackPop.setup({
+        key: 'pk_test_86d32aa1nV4l1da7120ce530f0b221c3cb97cbcc',
+        email: 'customer@email.com',
+        amount: 10000,
+        currency: "NGN",
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        firstname: 'Stephen',
+        lastname: 'King',
+        // label: "Optional string that replaces customer email"
+        metadata: {
+           custom_fields: [
+              {
+                  display_name: "Mobile Number",
+                  variable_name: "mobile_number",
+                  value: "+2348012345678"
+              }
+           ]
+        },
+        callback: function(response){
+            alert('success. transaction ref is ' + response.reference);
+        },
+        onClose: function(){
+            alert('window closed');
+        }
+      });
+      handler.openIframe();
+    }
+  </script> -->
+  

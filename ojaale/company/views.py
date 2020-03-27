@@ -7,10 +7,12 @@ from django.contrib import messages
 from .forms import CompanyForm
 # Create your views here.
 
-class CompanyProfile(DetailView):
-   
+class Companies(ListView):
+   template_name='main/company/companies.html'
    queryset=Company.objects.all()
 
+class CompanyProfile(DetailView):
+   queryset=Company.objects.all()
    def get(self,request, slug=None, *args, **kwargs):
       instance=get_object_or_404(Company, slug=slug)
       products=Products.objects.filter(company=instance)

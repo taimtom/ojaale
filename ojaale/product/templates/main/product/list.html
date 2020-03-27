@@ -3,7 +3,7 @@
 {{block.super}}
 
 {% load staticfiles %}
-{% block head %}  <link rel="stylesheet" href="{% static 'css/style.css' %}">      {% endblock head %}
+
 <section class="courses">
     <div class="row ">
         <div class="col-12">
@@ -66,13 +66,141 @@
             </a>
             </div>
             <div class="product-body">
+                <h3 class="product-price" >&#8358;{{product.price}} <del class="product-old-price">&#8358;{{product.discounted_from}}</del></h3>
+                <div class="product-rating" id="stars">
+                    <input type="hidden" id="starValRating" value="{{product.rating}}"/>
+                   
+                </div>
+                <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
+                <div class="product-btns">
+                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                    <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                        <input type="hidden" name="product_name" value="{{product.name}}" />
+                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> {% if in_cart %} Remove From Cart {% else %} Add To Cart {% endif %}</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    {% for product in object_list %}
+    
+    <!-- Single Product Area -->
+    
+    <div class="col-md-4 col-sm-6 col-xs-6 ">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">-20%</span>
+                </div>
+                <a href="/products/{{product.slug}}">
+                <button class="main-btn quick-view" ><i class="fa fa-search-plus"></i> Quick view</button>
+                <img src="{{product.image.url}}" alt="{{product.name}}">
+            </a>
+            </div>
+            <div class="product-body">
+                <h3 class="product-price" >&#8358;{{product.price}} <del class="product-old-price">&#8358;{{product.discounted_from}}</del></h3>
+                <div class="product-rating" id="starss">
+                    <input type="hidden" id="starValRating" value="{{product.rating}}"/>
+                    <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o empty"></i> -->
+                </div>
+                <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
+                <div class="product-btns">
+                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                    <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                        <input type="hidden" name="product_name" value="{{product.name}}" />
+                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> {% if in_cart %} Remove From Cart {% else %} Add To Cart {% endif %}</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    {% for product in object_list %}
+    
+    <!-- Single Product Area -->
+    
+    <div class="col-md-4 col-sm-6 col-xs-6 ">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">-20%</span>
+                </div>
+                <a href="/products/{{product.slug}}">
+                <button class="main-btn quick-view" ><i class="fa fa-search-plus"></i> Quick view</button>
+                <img src="{{product.image.url}}" alt="{{product.name}}">
+            </a>
+            </div>
+            <div class="product-body">
                 <h3 class="product-price" >${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
-                <div class="product-rating">
+                <div class="product-rating" id="stars">
+                    <input type="hidden" id="starValRating" value="{{product.rating}}"/>
+                    <!-- <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o empty"></i> -->
+                </div>
+                <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
+                <div class="product-btns">
+                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                    {{cart.products.all}}
+                    {% if product in cart.products.all %}
+                            <button class="default-btn add-to-cart" onclick="window.location.href='/cart/'">
+                                <i class="fa fa-shopping-cart"></i> Already in Cart 
+                            </button>
+                            {% else %}
+                            <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                                <input type="hidden" name="product_name" value="{{product.name}}" />
+                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
+                                
+                            </form>
+                            
+                            {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    {% for product in object_list %}
+    
+    <!-- Single Product Area -->
+    
+    <div class="col-md-4 col-sm-6 col-xs-6 ">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">-20%</span>
+                </div>
+                <a href="/products/{{product.slug}}">
+                <button class="main-btn quick-view" ><i class="fa fa-search-plus"></i> Quick view</button>
+                <img src="{{product.image.url}}" alt="{{product.name}}">
+            </a>
+            </div>
+            <div class="product-body">
+                <h3 class="product-price" >${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                <div class="product-rating" id="stars">
+                    <input type="hidden" id="starValRating" value="{{product.rating}}"/>
+                    <!-- <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o empty"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o empty"></i> -->
                 </div>
                 <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
                 <div class="product-btns">
@@ -109,11 +237,47 @@
                 <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
                 <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
                 <div class="product-rating">
+                    <!-- <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o empty"></i> -->
+                </div>
+            </div>
+            </a>
+            {% endfor %}
+            {% for product in object_list %}
+            <a href="/products/{{product.slug}}">
+            <div class="product-thumb">
+                <img src="{{product.image.url}}" alt="">
+            </div>
+            <div class="product-body">
+                <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+                <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                <div class="product-rating">
+                    <!-- <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o empty"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o empty"></i> -->
+                </div>
+            </div>
+            </a>
+            {% endfor %}
+            {% for product in object_list %}
+            <a href="/products/{{product.slug}}">
+            <div class="product-thumb">
+                <img src="{{product.image.url}}" alt="">
+            </div>
+            <div class="product-body">
+                <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+                <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                <div class="product-rating">
+                    <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o empty"></i> -->
                 </div>
             </div>
             </a>
@@ -125,3 +289,25 @@
 </div>
         
 {% endblock content %}
+{% block formadjust %}
+<!-- <script>
+//   document.getElementById('stars').innerHTML=getStars(3);
+var starValRating=$('#starVal').val();
+console.log(starValRating)
+    
+    $('#stars').append(getStars(4));
+    function getStars(rating){
+        rating =Math.round(rating*2)/2;
+        let output = [];
+        //Append all the filled whole stars
+        for(var i=rating; i>=1;i--)
+            output.push('<i class="fa fa-star" aria-hidden="true" ></i>');
+            // If there is a half a star , append it
+        if(i==.5) output.push('<i class="fa fa-star -half-o" aria-hidden="true" ></i>');
+        for(let i=(5-rating); i>=1;i--)
+            output.push('<i class="fa fa-star-o empty" aria-hidden="true" ></i>');
+        return output.join('');
+    }
+    
+    </script> -->
+    {% endblock formadjust %}

@@ -14,7 +14,7 @@ class CartToggle(LoginRequiredMixin,View):
         if cart_ is None:
             obj=Cart.objects.create(
             user=request.user,
-            total=100
+            total=0
             )
             return redirect(f"/products/{product_slug}/")
         else:
@@ -22,8 +22,8 @@ class CartToggle(LoginRequiredMixin,View):
             instance = get_object_or_404(Products, name=product)
             request_product=instance
             product_slug=instance.slug
-            username_to_toggle=request.user
-            cart_,in_cart = Cart.objects.toggle_product(request_product, username_to_toggle)
+            username_to_toggle=self.request.user
+            cart_,in_cart = Cart.objects.toggle_product(request_product, 'theo')
             print(in_cart)
             return redirect(f"/products/{product_slug}/")
         return redirect('/accounts/login/')

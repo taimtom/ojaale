@@ -68,21 +68,27 @@
                             <h6>{{object.name}}</h6>
                         </a>
                         <div class="line"></div>
-                        <p class="product-price">${{object.price}}</p>
+                        <h3 class="product-price">&#8358;{{object.price}} <small><del class="product-old-price" style="color: #333333;">&#8358;{{object.discounted_from}}</del></small></h3>
                         
                         <!-- Ratings & Review -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-                            <div class="ratings">
-                                
+                            <div class="ratings" id="meanRating">
+<!--                                 
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i> -->
                                 
                             </div>
                             <div class="review">
-                                <a href="#review">Write A Review</a>
+                                <a href="#review">
+                                    <h1> {{meanrating}}</h1>
+                                    {{numberofreviews}} Reviews
+                                    <!-- Write A Review -->
+                                    <input type="hidden" value="{{meanrating}}" id="meanStarVal" />
+                                    
+                                </a>
                             </div>
                         </div>
                         <!-- Avaiable -->
@@ -115,80 +121,82 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="col-md-12">
-    <div class="product-tab">
-        <ul class="tab-nav">
-            <li><a data-toggle="tab" href="#tab2" id="review">Reviews (3)</a></li>
-        </ul>
-        <div class="tab-content">
-            
-            <div id="tab2" class="">
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="product-reviews">
-                            {% for review in reviews %}
-                            <div class="single-review">
-                                <div class="review-heading">
-                                    <div><a href="#"><i class="fa fa-user-o"></i> {{review.user}}</a></div>
-                                    <div><a href="#"><i class="fa fa-clock-o"></i> {{review.timestamp | timesince}}</a></div>
-                                    <div class="review-rating pull-right">
-                                       
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o empty"></i>
-
-                                        
-                                      
+    <div class="col-md-12">
+        <div class="product-tab">
+            <ul class="tab-nav">
+                <li><a data-toggle="tab" href="#tab2" id="review">Reviews ({{ reviews.all.count }})</a></li>
+            </ul>
+            <div class="tab-content">
+                
+                <div id="tab2" class="">
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="product-reviews">
+                                {% for review in reviews %}
+                                <div class="single-review">
+                                    <div class="review-heading">
+                                        <div><a href="#"><i class="fa fa-user-o"></i> {{review.user}}</a></div>
+                                        <div><a href="#"><i class="fa fa-clock-o"></i> {{review.timestamp | timesince}}</a></div>
+                                        <div class="review-rating pull-right" id="starz">
+                                           <input type="hidden" value="{{review.rating}}" id="starVal"/>
+                                            <!-- <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o empty"></i> -->
+    
+                                            
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="review-body">
+                                        <p>{{review.content}}</p>
                                     </div>
                                 </div>
-                                <div class="review-body">
-                                    <p>{{review.content}}</p>
-                                </div>
+                                {% endfor %}
+                               
+                                
+    
+                                
                             </div>
-                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-uppercase" >Write Your Review</h4>
                            
-                            
-
-                            
+                            <form class="review-form" method="POST" action="." height="100px">{% csrf_token %}
+                                
+                                <div class="form-group" >
+                                    {{review_form}}
+                                </div>
+                                <div class="form-group" >
+                                    <div class="input-rating">
+                                        <strong class="text-uppercase">Your Rating: </strong>
+                                        <div class="stars">
+                                            
+                                            <input type="radio" id="star5" required name="rating" value="5" /><label for="star5"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="primary-btn">Submit</button>
+                            </form>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="text-uppercase" >Write Your Review</h4>
-                        <p>Your email address will not be published.</p>
-                        <form class="review-form" method="POST" action="." height="100px">{% csrf_token %}
-                            
-                            <div class="form-group" >
-                                {{review_form}}
-                            </div>
-                            <div class="form-group" >
-                                <div class="input-rating">
-                                    <strong class="text-uppercase">Your Rating: </strong>
-                                    <div class="stars">
-                                        
-                                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="primary-btn">Submit</button>
-                        </form>
-                    </div>
+    
+    
+    
                 </div>
-
-
-
             </div>
         </div>
     </div>
 </div>
+
+
 {% endblock content %}
 
 {% block formadjust %}
@@ -199,4 +207,33 @@
         
     })
 </script>
+<script>
+//   document.getElementById('stars').innerHTML=getStars(3);
+// var starValRating=$('#starVal').val();
+var meanValRating=$('#meanStarVal').val();
+
+    
+    $('#meanRating').append(getStars(meanValRating));
+    $('#starz').each(function(index){
+        // console.log(index)
+        var starValRating=$('#starVal').val();
+        $(this).append(getStars(starValRating));
+        console.log(starValRating)
+    })
+    
+    function getStars(rating){
+        rating =Math.round(rating*2)/2;
+        let output = [];
+        //Append all the filled whole stars
+        for(var i=rating; i>=1;i--)
+            output.push('<i class="fa fa-star" aria-hidden="true" ></i>');
+
+            // If there is a half a star , append it
+        if(i==.5) output.push('<i class="fa fa-star-half-o" aria-hidden="true" ></i>');
+        for(let i=(5-rating); i>=1;i--)
+            output.push('<i class="fa fa-star-o empty" aria-hidden="true" ></i>');
+        return output.join('');
+    }
+    
+    </script>
 {% endblock formadjust %}

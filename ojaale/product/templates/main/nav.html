@@ -1,163 +1,436 @@
-<!-- {% load staticfiles %}
-<header class="header-area category-nav"   >
+{% load staticfiles %}
+
+<header class="head-area ">
+    
+
+<div id="responsive-nav"  >
             
    
+    <div class="category-nav">
     
     
-    
-    <nav class="nav  " >
+        <span class="category-header">Categories <i class="fa fa-list"></i> </span>
         <ul class="category-list">
-            
-                
-    <div class="nav-close">
-        <i class="fa fa-close" aria-hidden="true"></i>
-    </div>
-    <span class="category-header">Menu <i class="fa fa-list"></i></span>
+        <li class="dropdown side-dropdown" >
+            <a class="" data-toggle="dropdown" aria-expanded="true">Clothes<i id="dropnow" class="fa fa-plus" ></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Men</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Women</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Children</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="dropdown side-dropdown" id="nav-list">
+            <a class="" data-toggle="dropdown" aria-expanded="true">Phones and Computers <i class="fa fa-plus"></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/banner05.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- </li> -->
+        <li class="dropdown side-dropdown" id="nav-list">
+            <a class="" data-toggle="dropdown" aria-expanded="true">Electronics <i class="fa fa-plus"></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/banner05.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="dropdown side-dropdown" id="nav-list">
+            <a class="" data-toggle="dropdown" aria-expanded="true">Machines <i class="fa fa-plus"></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/banner05.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="dropdown side-dropdown" id="nav-list">
+            <a class="" data-toggle="dropdown" aria-expanded="true">Furnitures<i class="fa fa-plus"></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/banner05.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="dropdown side-dropdown" id="nav-list">
+            <a class="" data-toggle="dropdown" aria-expanded="true">Farm products<i class="fa fa-plus"></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/banner05.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="dropdown side-dropdown" id="nav-list">
+            <a class="" data-toggle="dropdown" aria-expanded="true">Houses<i class="fa fa-plus"></i></a>
+            <div class="custom-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                        <hr class="hidden-md hidden-lg">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-links">
+                            <li>
+                                <h3 class="list-links-title">Categories</h3></li>
+                            <li><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Phones & Accessories</a></li>
+                            <li><a href="#">Jewelry & Watches</a></li>
+                            <li><a href="#">Bags & Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-12">
+                        <hr>
+                        <a class="banner banner-1" href="#">
+                            <img src="{% static 'img/banner05.jpg' %}" alt="">
+                            <div class="banner-caption text-center">
+                                <h2 class="white-color">NEW COLLECTION</h2>
+                                <h3 class="white-color font-weak">HOT DEAL</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li><a href="{% url 'company:list' %}">All Shops</a></li>
+        <li><a href="{% url 'products:list' %}">All Products</a></li>
+ 
+        
+    </ul>  
+    <span class="menu-header">Menu <i class="fa fa-list"></i></span>
+    <ul class="menus-list">
             <li class=""><a href="{% url 'home' %}">Home</a> </li>
-            <li  class="active "><a href="{% url 'products:list' %}">Shop</a></li>
+            <li  class=""><a href="{% url 'products:list' %}">Shop</a></li>
             <li class=""><a href="{% url 'cart:cart' %}">Cart</a></li>
             <li class=""><a href="{% url 'delivery:checkout' %}">Checkout</a></li>
-            
-            <span class="category-header">Categories <i class="fa fa-list"></i> </span>
-            <li class="dropdown side-dropdown" >
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Farm Products <i class="fa fa-caret-right"></i></a>
-                <div class="custom-menu">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <ul class="list-links">
-                                <li>
-                                    <h3 class="list-links-title">Categories</h3></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Phones & Accessories</a></li>
-                                <li><a href="#">Jewelry & Watches</a></li>
-                                <li><a href="#">Bags & Shoes</a></li>
-                            </ul>
-                            <hr class="hidden-md hidden-lg">
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-links">
-                                <li>
-                                    <h3 class="list-links-title">Categories</h3></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Phones & Accessories</a></li>
-                                <li><a href="#">Jewelry & Watches</a></li>
-                                <li><a href="#">Bags & Shoes</a></li>
-                            </ul>
-                            <hr class="hidden-md hidden-lg">
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-links">
-                                <li>
-                                    <h3 class="list-links-title">Categories</h3></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Phones & Accessories</a></li>
-                                <li><a href="#">Jewelry & Watches</a></li>
-                                <li><a href="#">Bags & Shoes</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row hidden-sm hidden-xs">
-                        <div class="col-md-12">
-                            <hr>
-                            <a class="banner banner-1" href="#">
-                                <img src="{% static 'img/banner05.jpg' %}" alt="">
-                                <div class="banner-caption text-center">
-                                    <h2 class="white-color">NEW COLLECTION</h2>
-                                    <h3 class="white-color font-weak">HOT DEAL</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="dropdown side-dropdown" id="nav-list">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women’s Clothing <i class="fa fa-caret-right"></i></a>
-                <div class="custom-menu">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <ul class="list-links">
-                                <li>
-                                    <h3 class="list-links-title">Categories</h3></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Phones & Accessories</a></li>
-                                <li><a href="#">Jewelry & Watches</a></li>
-                                <li><a href="#">Bags & Shoes</a></li>
-                            </ul>
-                            <hr class="hidden-md hidden-lg">
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-links">
-                                <li>
-                                    <h3 class="list-links-title">Categories</h3></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Phones & Accessories</a></li>
-                                <li><a href="#">Jewelry & Watches</a></li>
-                                <li><a href="#">Bags & Shoes</a></li>
-                            </ul>
-                            <hr class="hidden-md hidden-lg">
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-links">
-                                <li>
-                                    <h3 class="list-links-title">Categories</h3></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Phones & Accessories</a></li>
-                                <li><a href="#">Jewelry & Watches</a></li>
-                                <li><a href="#">Bags & Shoes</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row hidden-sm hidden-xs">
-                        <div class="col-md-12">
-                            <hr>
-                            <a class="banner banner-1" href="#">
-                                <img src="./img/banner05.jpg" alt="">
-                                <div class="banner-caption text-center">
-                                    <h2 class="white-color">NEW COLLECTION</h2>
-                                    <h3 class="white-color font-weak">HOT DEAL</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            </li>
-            <li class=""><a href="#">Farm Market</a></li>
-            <li><a href="#">Fashion Home</a></li>
-            <li><a href="#">Accesories</a></li>
-            <li><a href="#">Furnitures</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Fast food</a></li>
-            <li><a href="#">Tickets</a></li>
+    </ul>
+           
+        <span class="filters-header">Filter <i class="fa fa-list"></i></span>
+        <ul class="filters-list">
+    
+            <li class=""><a href="{% url 'home' %}">Home</a> </li>
+            <li  class=""><a href="{% url 'products:list' %}">Shop</a></li>
+            <li class=""><a href="{% url 'cart:cart' %}">Cart</a></li>
+            <li class=""><a href="{% url 'delivery:checkout' %}">Checkout</a></li>
         </ul>
         
             
         
-    </nav>
+
     
    
 
             
      
- 
- 
+    </div>
+ </div>
     
-</header> -->
-<header class="header-area "  >
+</header>
+<!-- <header class="header-area "  >
             
-    <!-- Close Icon -->
+
     <div class="nav-close">
         <i class="fa fa-close" aria-hidden="true"></i>
     </div>
-    
-    
-    <!-- Amado Nav -->
+
     <nav class="amado-nav" >
         <ul>
             
@@ -180,16 +453,16 @@
             
         
     </nav>
-    <!-- Button Group -->
+
     <div class="amado-btn-group mt-30 mb-100">
         <a href="#" class="btn amado-btn mb-15">%Discount%</a>
         <a href="#" class="btn amado-btn active">New this week</a>
     </div>
-    <!-- Cart Menu -->
+
     <div class="cart-fav-search mb-100">
         <a href="cart.html" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> Cart <span>(0)</span></a>
         <a href="#" class="fav-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> Favourite</a>
         <a href="#" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> Search</a>
     </div>
     
-</header>
+</header> -->

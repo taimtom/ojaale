@@ -16,7 +16,12 @@
     <!-- Favicon  -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">  
     <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="{% static 'dist/css/slick.css' %}" />
+	<link type="text/css" rel="stylesheet" href="{% static 'dist/css/slick-theme.css' %}" />
 
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="{% static 'dist/css/nouislider.min.css' %}" />
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -42,10 +47,15 @@
             <div >
             
             
-            <div class="amado-navbar-toggler">
+            <!-- <div class="amado-navbar-toggler">
                 
                 <span></span><span></span><span></span>
+            </div> -->
+            <!-- Mobile nav toggle-->
+            <div class="nav-toggle" style="margin-left: -12px;">
+                <button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
             </div>
+            <!-- / Mobile nav toggle -->
             </div>
             <a href="#" width="100%" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""/> </a>
         </div>
@@ -87,6 +97,7 @@
 	<script src="{% static 'js/mains.js' %}"></script>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {% block formadjust %}{% endblock formadjust %}
 
     <!-- JS code for updating rating values -->
     <script>
@@ -102,12 +113,10 @@
             $('input[name="' + ratingTarget + '"][value="' + ratingValue + '"]').prop('checked', true);
         });
     </script>
-    <script>
-        $('.dropdown').on('click', function(){
-            $(this).toggleClass('open')
-        })
-    </script>
-    {% block formadjust %}{% endblock formadjust %}
+
+    
+   
+ 
 </body>
 
 </html>

@@ -14,17 +14,20 @@ class Company(models.Model):
     email=models.EmailField()
     phone=models.CharField(max_length=11)
     logo=models.ImageField(upload_to='company/images', null=True, blank=True)
+    cover=models.ImageField(upload_to='company/covers', null=True, blank=True)
+    
     achievements=models.CharField(max_length=100,null=True, blank=True)
     description=models.TextField(null=True, blank=True)
     #products=models.ManyToManyField(Products, related_name='our_products')
     location=models.TextField()
     product_cat=models.CharField(max_length=100)
+    
     slug=models.SlugField(null=True, blank=True)
 
     def __str__(self):
         return self.name
     def get_company_url(self):
-        return reverse("company:detail", kwargs={'name':self.name})
+        return reverse("company:detail", kwargs={'slug':self.slug})
 
 def rl_pre_save_receiver(sender, instance, *args, **kwargs):
 	instance.name = instance.name.capitalize()

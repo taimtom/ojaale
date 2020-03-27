@@ -5,17 +5,26 @@
   var responsiveNav = $('#responsive-nav'),
     catToggle = $('#responsive-nav .category-nav .category-header'),
     catList = $('#responsive-nav .category-nav .category-list'),
-    menuToggle = $('#responsive-nav .menu-nav .menu-header'),
-    menuList = $('#responsive-nav .menu-nav .menu-list');
+    menuToggle = $('#responsive-nav .category-nav .menu-header'),
+    menuList = $('#responsive-nav .category-nav .menus-list'),
+    filterToggle = $('#responsive-nav .category-nav .filters-header'),
+    filterList = $('#responsive-nav .category-nav .filters-list');
 
   catToggle.on('click', function() {
     menuList.removeClass('open');
+    filterList.removeClass('open');
     catList.toggleClass('open');
   });
 
   menuToggle.on('click', function() {
     catList.removeClass('open');
+    filterList.removeClass('open');
     menuList.toggleClass('open');
+  });
+  filterToggle.on('click', function() {
+    menuList.removeClass('open');
+    catList.removeClass('open');
+    filterList.toggleClass('open');
   });
 
   $(document).click(function(event) {
@@ -143,5 +152,9 @@
       }
     });
   }
+  ('#dropnow').on('click', function(){
+    (this).removeClass('fa-plus')
+    (this).toggleClass('fa-minus')
+  })
 
 })(jQuery);
